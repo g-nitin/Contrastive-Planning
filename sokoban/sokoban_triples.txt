@@ -1,0 +1,860 @@
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushleft_precondition_1
+https://purl.org/ai4s/ontology/planning#?z	http://www.w3.org/2000/01/rdf-schema#label	?z
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#movedown_precondition_2
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_4
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#pushleft
+https://purl.org/ai4s/ontology/planning#solvesRequirement	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#Planner
+https://purl.org/ai4s/ontology/planning#pick-up_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveleft_effect_4
+N4a099fc027ea4f63aa60b335a69c1128	http://www.w3.org/2002/07/owl#onDataRange	http://www.w3.org/2001/XMLSchema#nonNegativeInteger
+https://purl.org/ai4s/ontology/planning#movedown_precondition_4	http://www.w3.org/2000/01/rdf-schema#label	(clear ?y)
+https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_5	http://www.w3.org/2000/01/rdf-schema#label	(holding ?x)
+https://purl.org/ai4s/ontology/planning#moveup_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#hasAction	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushup_precondition_2
+https://purl.org/ai4s/ontology/planning#pushleft_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushdown_precondition_4
+https://purl.org/ai4s/ontology/planning#pushright	http://www.w3.org/2000/01/rdf-schema#label	pushright
+https://purl.org/ai4s/ontology/planning#pushright_precondition_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+N465de7963af541d2b6dd6e40a34efc80	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#hasRequirement	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#ofPlannerType	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#Planner
+https://purl.org/ai4s/ontology/planning#pushup	http://www.w3.org/2000/01/rdf-schema#label	pushup
+https://purl.org/ai4s/ontology/planning#pushright_effect_5	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#moveright_precondition_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+http://caressesrobot.org/ontology#Parameter	http://www.w3.org/2000/01/rdf-schema#comment	a class that represents what is involved in an action
+https://purl.org/ai4s/ontology/planning#blocksworld	http://www.w3.org/2000/01/rdf-schema#label	blocksworld
+https://purl.org/ai4s/ontology/planning#hasParameterType	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#hasProblem	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#PlanningProblem
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveleft_precondition_2
+https://purl.org/ai4s/ontology/planning#unstack_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#Authors	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#AnnotationProperty
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushdown_precondition_5
+https://purl.org/ai4s/ontology/planning#block	https://purl.org/ai4s/ontology/planning#hasTypeInstance	https://purl.org/ai4s/ontology/planning#b4
+https://purl.org/ai4s/ontology/planning#:strips	http://www.w3.org/2000/01/rdf-schema#label	:strips
+https://purl.org/ai4s/ontology/planning#moveleft_precondition_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasObject	https://purl.org/ai4s/ontology/planning#b1
+https://purl.org/ai4s/ontology/planning#pushleft	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?sokoban)
+https://purl.org/ai4s/ontology/planning#unstack_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (handempty))
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#stack_effect_3
+https://purl.org/ai4s/ontology/planning	http://www.w3.org/2002/07/owl#versionIRI	https://purl.org/ai4s/ontology/planning/v2.0
+https://purl.org/ai4s/ontology/planning#pushright_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(crate ?crate)
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveup_effect_1
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(leftOf ?y ?x)
+https://purl.org/ai4s/ontology/planning#hasParameter	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#hasPDDLTypeInstance	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a type to a problem object that is an instance of it
+https://purl.org/ai4s/ontology/planning#pushright_precondition_4	http://www.w3.org/2000/01/rdf-schema#label	(leftOf ?y ?z)
+https://purl.org/ai4s/ontology/planning#GoalState	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?crate
+https://purl.org/ai4s/ontology/planning#InitialState	http://www.w3.org/2000/01/rdf-schema#subClassOf	http://purl.org/vocab/lifecycle/schema#State
+https://purl.org/ai4s/ontology/planning#moveright_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#isGeneratedBy	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a plan to a planner that generates it
+https://purl.org/ai4s/ontology/planning#hasExtractedAction	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#pushdown
+https://purl.org/ai4s/ontology/planning#pushdown	http://www.w3.org/2000/01/rdf-schema#label	pushdown
+https://purl.org/ai4s/ontology/planning#pushright_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#unstack_effect_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#hasPlan	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#problem-3-1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#PlanningProblem
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#movedown_effect_3
+https://purl.org/ai4s/ontology/planning#pushdown_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#isGeneratedBy	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_2
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#ProblemObject	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushup_effect_3	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveright_precondition_3
+https://purl.org/ai4s/ontology/planning#movedown_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?sokoban ?x))
+https://purl.org/ai4s/ontology/planning#moveleft_effect_3	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#stack_precondition_1
+https://purl.org/ai4s/ontology/planning#pushleft_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?sokoban ?x))
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveup_precondition_1
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?z
+https://purl.org/ai4s/ontology/planning#unstack_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?x))
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#sokoban_predicate_6
+https://purl.org/ai4s/ontology/planning#hasRequirement	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#DomainRequirement
+https://purl.org/ai4s/ontology/planning#solvesRequirement	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planner to a domain requirement that it can handle or satisfy
+https://purl.org/ai4s/ontology/planning#pushup_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(crate ?crate)
+https://purl.org/ai4s/ontology/planning#ofParameterType	http://www.w3.org/2000/01/rdf-schema#domain	http://caressesrobot.org/ontology#Parameter
+https://purl.org/ai4s/ontology/planning#moveup	http://www.w3.org/2000/01/rdf-schema#label	moveup
+https://purl.org/ai4s/ontology/planning#moveup_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#isGeneratedBy	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#Planner
+N7acc788b8aaa461c94cf80f28c101b8a	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_5	http://www.w3.org/2000/01/rdf-schema#label	(clear b2)
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#unstack
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?sokoban
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_4
+https://purl.org/ai4s/ontology/planning#pushright_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+http://purl.org/dc/terms/language	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#AnnotationProperty
+https://purl.org/ai4s/ontology/planning#hasPlanExplanation	http://www.w3.org/2000/01/rdf-schema#domain	http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan
+https://purl.org/ai4s/ontology/planning#moveleft_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_6	http://www.w3.org/2000/01/rdf-schema#label	(ontable b3)
+https://purl.org/ai4s/ontology/planning#pushup_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#hasModelReconciliationExplanation	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#DatatypeProperty
+https://purl.org/ai4s/ontology/planning#moveright_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?sokoban ?x))
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushup_precondition_1
+https://purl.org/ai4s/ontology/planning#unstack_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasPlan	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningProblem
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushdown_effect_6
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasRequirement	https://purl.org/ai4s/ontology/planning#:strips
+https://purl.org/ai4s/ontology/planning#block	https://purl.org/ai4s/ontology/planning#hasTypeInstance	https://purl.org/ai4s/ontology/planning#b3
+https://purl.org/ai4s/ontology/planning#pushright	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#moveright_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveright_effect_4
+https://purl.org/ai4s/ontology/planning#movedown_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+N465de7963af541d2b6dd6e40a34efc80	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#ActionEffect
+N30fd3e721ba84b11b118e3eb2f5a5213	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#isGeneratedBy
+https://purl.org/ai4s/ontology/planning#moveup_effect_3	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#stack_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#blocksworld_predicate_1
+https://purl.org/ai4s/ontology/planning#unstack_effect_5	http://www.w3.org/2000/01/rdf-schema#label	(not (on ?x ?y))
+https://purl.org/ai4s/ontology/planning#unstack_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#moveright_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#pick-up_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(not (ontable ?x))
+https://purl.org/ai4s/ontology/planning#hasPredicate	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#moveright_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#movedown_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(below ?y ?x)
+https://purl.org/ai4s/ontology/planning#pushleft_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushdown_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasHighRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushleft_precondition_8
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#stack_effect_4
+https://purl.org/ai4s/ontology/planning#moveup_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#InitialState	http://www.w3.org/2000/01/rdf-schema#comment	represents the starting or the given state of a planning problem
+https://purl.org/ai4s/ontology/planning#ofParameterType	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#ParameterType
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#unstack_precondition_1
+https://purl.org/ai4s/ontology/planning#moveleft_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#pushup_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#moveup_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?x)
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#moveup
+https://purl.org/ai4s/ontology/planning#pushup_effect_6	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasModelReconciliationExplanation	http://www.w3.org/2000/01/rdf-schema#range	http://www.w3.org/2001/XMLSchema#string
+https://purl.org/ai4s/ontology/planning#stack_effect_2	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushright_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#ActionEffect	http://www.w3.org/2000/01/rdf-schema#subClassOf	Nfcfebb1be87049d9bb80b7883f72b49d
+Ne23de23a656641f7a7cd84f1c207f8c8	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#hasGoalState	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningProblem
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushdown_effect_3
+https://purl.org/ai4s/ontology/planning#deletesPredicate	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates an effect to a state that deletes a predicate from it
+https://purl.org/ai4s/ontology/planning#ActionPrecondition	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#addsPredicate	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates an effect to a state that adds a predicate to it
+https://purl.org/ai4s/ontology/planning#pushup_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(at ?crate ?z)
+https://purl.org/ai4s/ontology/planning#pushleft_effect_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pick-up	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+N3370974ed4844600a071b93daa5dc21f	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasAction
+https://purl.org/ai4s/ontology/planning#hasObject	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningProblem
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_3	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_7	http://www.w3.org/2000/01/rdf-schema#label	(on b4 b3)
+https://purl.org/ai4s/ontology/planning#pushdown_effect_3	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan	http://www.w3.org/2000/01/rdf-schema#subClassOf	N30fd3e721ba84b11b118e3eb2f5a5213
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_5	http://www.w3.org/2000/01/rdf-schema#label	(on b3 b1)
+http://purl.org/vocab/lifecycle/schema#State	http://www.w3.org/2000/01/rdf-schema#comment	represents a situation or a configuration of the world in a planning problem
+https://purl.org/ai4s/ontology/planning#hasHighRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to a planner that has a high relevance score for it
+https://purl.org/ai4s/ontology/planning#pushleft_effect_5	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasEffect	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates an action to an action effect that results from it
+Nfcfebb1be87049d9bb80b7883f72b49d	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#deletesPredicate
+https://purl.org/ai4s/ontology/planning#hasConstant	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to a domain constant that is defined in it
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushright_precondition_6
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#unstack_effect_1
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveright_effect_1
+https://purl.org/ai4s/ontology/planning#put-down_effect_1	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#block	https://purl.org/ai4s/ontology/planning#hasTypeInstance	https://purl.org/ai4s/ontology/planning#b2
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_2	http://www.w3.org/2000/01/rdf-schema#label	(ontable b1)
+https://purl.org/ai4s/ontology/planning#moveright_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveright_precondition_1
+https://purl.org/ai4s/ontology/planning#pushdown_effect_6	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_6	http://www.w3.org/2000/01/rdf-schema#label	(clear b3)
+https://purl.org/ai4s/ontology/planning#ofPlannerType	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#hasProblem	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#pushdown_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#b4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ProblemObject
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(below ?y ?x)
+https://purl.org/ai4s/ontology/planning#DomainRequirement	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushup_precondition_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#blocksworld_predicate_3
+https://purl.org/ai4s/ontology/planning#pushright_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?y)
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_5	http://www.w3.org/2000/01/rdf-schema#label	(destination for block)
+https://purl.org/ai4s/ontology/planning#put-down	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#put-down_effect_4
+N6d2f09f7a4df4dbb90247becb71cc96e	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasType	https://purl.org/ai4s/ontology/planning#block
+https://purl.org/ai4s/ontology/planning#pick-up	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pick-up_precondition_3
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#moveright
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushup_effect_4
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?x)
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushup_precondition_5
+https://purl.org/ai4s/ontology/planning#ofParameterType	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates an action parameter to a type that classifies it
+https://purl.org/ai4s/ontology/planning#hasConstant	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?crate
+https://purl.org/ai4s/ontology/planning#moveleft	http://www.w3.org/2000/01/rdf-schema#label	moveleft
+https://purl.org/ai4s/ontology/planning#stack_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(holding ?x)
+https://purl.org/ai4s/ontology/planning#pick-up_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#unstack_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(on ?x ?y)
+https://purl.org/ai4s/ontology/planning#stack_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushup_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?sokoban ?x))
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#block	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#Type
+https://purl.org/ai4s/ontology/planning#?y	https://purl.org/ai4s/ontology/planning#ofType	https://purl.org/ai4s/ontology/planning#block
+https://purl.org/ai4s/ontology/planning#pushright_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#pushup_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasConstant	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#DomainConstant
+https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_4	http://www.w3.org/2000/01/rdf-schema#label	(clear b3)
+https://purl.org/ai4s/ontology/planning#moveup_precondition_4	http://www.w3.org/2000/01/rdf-schema#label	(clear ?y)
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(crate ?crate)
+https://purl.org/ai4s/ontology/planning#moveright_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushleft_effect_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#moveright_precondition_4	http://www.w3.org/2000/01/rdf-schema#label	(clear ?y)
+https://purl.org/ai4s/ontology/planning#pushright_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushright_effect_7	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+N6d2f09f7a4df4dbb90247becb71cc96e	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#addsPredicate
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_3	http://www.w3.org/2000/01/rdf-schema#label	(clear b1)
+https://purl.org/ai4s/ontology/planning#MacroAction	http://www.w3.org/2000/01/rdf-schema#subClassOf	http://caressesrobot.org/ontology#Action
+https://purl.org/ai4s/ontology/planning#pushdown_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushup_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#stack_effect_4	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#solvesRequirement	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#DomainRequirement
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#movedown_effect_1
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#stack_effect_5
+https://purl.org/ai4s/ontology/planning#pushdown_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#put-down_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(handempty)
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushleft_effect_1
+https://purl.org/ai4s/ontology/planning#pick-up_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+N30fd3e721ba84b11b118e3eb2f5a5213	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#hasInitialState	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning problem to an initial state that is given for it
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushleft_effect_4
+https://purl.org/ai4s/ontology/planning#moveright_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?y)
+https://purl.org/ai4s/ontology/planning#problem-4-1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#PlanningProblem
+https://purl.org/ai4s/ontology/planning#pick-up_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(ontable ?x)
+https://purl.org/ai4s/ontology/planning#hasTag	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a type to a type tag that labels it
+https://purl.org/ai4s/ontology/planning#hasEffect	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_3	http://www.w3.org/2000/01/rdf-schema#label	(ontable b2)
+https://purl.org/ai4s/ontology/planning#hasAction	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to a domain action that is available in it
+https://purl.org/ai4s/ontology/planning#movedown	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushleft_effect_3
+https://purl.org/ai4s/ontology/planning#stack	http://www.w3.org/2000/01/rdf-schema#label	stack
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushleft_effect_5
+https://purl.org/ai4s/ontology/planning#sokoban	http://www.w3.org/2000/01/rdf-schema#label	sokoban
+https://purl.org/ai4s/ontology/planning#hasMediumRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#Planner
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#stack_effect_1
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#unstack_effect_3
+https://purl.org/ai4s/ontology/planning#hasObject	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning problem to a problem object that is involved in it
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveup_precondition_3
+https://purl.org/ai4s/ontology/planning#hasParameter	http://www.w3.org/2000/01/rdf-schema#domain	http://caressesrobot.org/ontology#Action
+N29a6c5a08321409b8de6b748b84caecf	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#solvesRequirement
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasObject	https://purl.org/ai4s/ontology/planning#b3
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushleft_effect_2
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#hasParameterType	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#ParameterType
+https://purl.org/ai4s/ontology/planning#hasLowRelevancePlanner	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_4	http://www.w3.org/2000/01/rdf-schema#label	(on b3 b4)
+http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan	http://www.w3.org/2000/01/rdf-schema#subClassOf	N4a099fc027ea4f63aa60b335a69c1128
+https://purl.org/ai4s/ontology/planning#MacroAction	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#moveup_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushdown_effect_7
+https://purl.org/ai4s/ontology/planning#PlanningDomain	http://www.w3.org/2000/01/rdf-schema#subClassOf	Ncca1cddec3e541c78850bdd3176c6673
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_1	http://www.w3.org/2000/01/rdf-schema#label	(on ?x ?y)
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushdown_effect_1
+https://purl.org/ai4s/ontology/planning#PlanningDomain	http://www.w3.org/2000/01/rdf-schema#comment	a class that represents a problem setting for automated planning
+https://purl.org/ai4s/ontology/planning#hasMediumRelevancePlanner	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#put-down_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(not (holding ?x))
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#stack_effect_2
+https://purl.org/ai4s/ontology/planning#?sokoban	http://www.w3.org/2000/01/rdf-schema#label	?sokoban
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#moveleft_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushright_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(leftOf ?x ?y)
+https://purl.org/ai4s/ontology/planning#pushdown_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Ontology
+https://purl.org/ai4s/ontology/planning#moveleft_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?sokoban ?x))
+Nfcfebb1be87049d9bb80b7883f72b49d	http://www.w3.org/2002/07/owl#someValuesFrom	http://purl.org/vocab/lifecycle/schema#State
+https://purl.org/ai4s/ontology/planning#solvedBy	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#moveleft_precondition_4	http://www.w3.org/2000/01/rdf-schema#label	(clear ?y)
+https://purl.org/ai4s/ontology/planning#DomainConstant	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+Nef4148284d0548dbbd1e407528d0eb5e	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#pushdown_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(at ?crate ?z)
+https://purl.org/ai4s/ontology/planning#hasParameter	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates an action to an action parameter that is involved in it
+https://purl.org/ai4s/ontology/planning#moveup_precondition_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushleft_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?y)
+https://purl.org/ai4s/ontology/planning#pushup_effect_7	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#movedown_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#put-down_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#hasLowRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#Planner
+https://purl.org/ai4s/ontology/planning#moveright_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?x)
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveright_precondition_2
+https://purl.org/ai4s/ontology/planning#hasTag	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#ParameterType
+N29a6c5a08321409b8de6b748b84caecf	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_6
+https://purl.org/ai4s/ontology/planning#pushdown	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushleft_precondition_6
+https://purl.org/ai4s/ontology/planning#hasRequirement	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#pushup_precondition_7	http://www.w3.org/2000/01/rdf-schema#label	(clear ?z)
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasObject	https://purl.org/ai4s/ontology/planning#b2
+Nd13672c130eb44aa9fee488dc5ed6c14	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasInitialState
+http://purl.org/dc/terms/creator	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#AnnotationProperty
+Ncca1cddec3e541c78850bdd3176c6673	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasRequirement
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?sokoban
+https://purl.org/ai4s/ontology/planning#moveup_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+N465de7963af541d2b6dd6e40a34efc80	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasEffect
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveright_effect_2
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_5	http://www.w3.org/2000/01/rdf-schema#label	(at ?x ?y)
+http://purl.org/dc/terms/contributor	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#AnnotationProperty
+N4a099fc027ea4f63aa60b335a69c1128	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#pushup_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasParameterType	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#hasPlanCost	http://www.w3.org/2000/01/rdf-schema#range	http://www.w3.org/2001/XMLSchema#nonNegativeInteger
+https://purl.org/ai4s/ontology/planning#pushright_effect_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#ActionPrecondition	http://www.w3.org/2000/01/rdf-schema#comment	a class that represents what needs to be true before an action can be done
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_6	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_4	http://www.w3.org/2000/01/rdf-schema#label	(ontable b2)
+https://purl.org/ai4s/ontology/planning#solvedBy	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#Planner
+https://purl.org/ai4s/ontology/planning#pushleft_effect_5	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?crate ?y))
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushright_effect_5
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_2	http://www.w3.org/2000/01/rdf-schema#label	(ontable ?x)
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveleft_effect_3
+https://purl.org/ai4s/ontology/planning#moveup_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?sokoban ?x))
+Nef4148284d0548dbbd1e407528d0eb5e	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasGoalState
+https://purl.org/ai4s/ontology/planning#hasActionExplanation	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#DatatypeProperty
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_3	http://www.w3.org/2000/01/rdf-schema#label	(leftOf ?x ?y)
+https://purl.org/ai4s/ontology/planning#block	https://purl.org/ai4s/ontology/planning#hasTypeInstance	https://purl.org/ai4s/ontology/planning#b1
+https://purl.org/ai4s/ontology/planning#put-down	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#put-down_precondition_1
+https://purl.org/ai4s/ontology/planning#ofPlannerType	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planner to a planner type that categorizes it
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushright_precondition_1
+https://purl.org/ai4s/ontology/planning#pushdown_effect_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+Ncca1cddec3e541c78850bdd3176c6673	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#pushup_precondition_6	http://www.w3.org/2000/01/rdf-schema#label	(at ?crate ?y)
+https://purl.org/ai4s/ontology/planning#b3	http://www.w3.org/2000/01/rdf-schema#label	b3
+https://purl.org/ai4s/ontology/planning#b4	http://www.w3.org/2000/01/rdf-schema#label	b4
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#pushup
+https://purl.org/ai4s/ontology/planning#moveleft_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?crate
+https://purl.org/ai4s/ontology/planning#moveleft_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+http://caressesrobot.org/ontology#Action	http://www.w3.org/2000/01/rdf-schema#comment	a class that represents a type of action that can be performed in a planning domain
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_2
+https://purl.org/ai4s/ontology/planning#pushup_effect_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#blocksworld	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#?z	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionParameter
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushright_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#unstack_effect_2
+https://purl.org/ai4s/ontology/planning#unstack_effect_5	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_3	http://www.w3.org/2000/01/rdf-schema#label	(on b3 b2)
+https://purl.org/ai4s/ontology/planning#pushright_precondition_6	http://www.w3.org/2000/01/rdf-schema#label	(at ?crate ?y)
+https://purl.org/ai4s/ontology/planning#pushup_effect_7	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?z))
+https://purl.org/ai4s/ontology/planning#?crate	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionParameter
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#unstack	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#block	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#type
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_8	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushright_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#hasProblem	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to a planning problem that is defined in it
+https://purl.org/ai4s/ontology/planning#stack_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#moveleft_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#hasActionExplanation	http://www.w3.org/2000/01/rdf-schema#range	http://www.w3.org/2001/XMLSchema#string
+https://purl.org/ai4s/ontology/planning#stack_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#movedown_effect_2
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushleft_precondition_4
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#sokoban_predicate_5
+https://purl.org/ai4s/ontology/planning#put-down_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushup_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?y)
+https://purl.org/ai4s/ontology/planning#pushup	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#PlannerType	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+Nd13672c130eb44aa9fee488dc5ed6c14	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#hasPlanCost	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#DatatypeProperty
+https://purl.org/ai4s/ontology/planning#moveleft_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?sokoban)
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_1
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_1	http://www.w3.org/2000/01/rdf-schema#label	(handempty)
+https://purl.org/ai4s/ontology/planning#pushup_precondition_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#moveright	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushdown_precondition_1
+https://purl.org/ai4s/ontology/planning#hasPrecondition	http://www.w3.org/2000/01/rdf-schema#domain	http://caressesrobot.org/ontology#Action
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushup_effect_3
+https://purl.org/ai4s/ontology/planning#moveup_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?y)
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasProblem	https://purl.org/ai4s/ontology/planning#problem-4-1
+https://purl.org/ai4s/ontology/planning#ActionEffect	http://www.w3.org/2000/01/rdf-schema#comment	a class that represents what happens after an action is done
+https://purl.org/ai4s/ontology/planning#pushleft_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushdown_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#sokoban_predicate_1
+https://purl.org/ai4s/ontology/planning#addsPredicate	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushleft_precondition_7
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_3
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#pushright
+https://purl.org/ai4s/ontology/planning#solvesRequirement	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+N4a099fc027ea4f63aa60b335a69c1128	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasPlanCost
+https://purl.org/ai4s/ontology/planning#?x	https://purl.org/ai4s/ontology/planning#ofType	https://purl.org/ai4s/ontology/planning#block
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_7	http://www.w3.org/2000/01/rdf-schema#label	(clear ?z)
+https://purl.org/ai4s/ontology/planning#pushleft_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#PlanningProblem	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#moveleft_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#moveup_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pick-up_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#moveup_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#movedown_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveleft_effect_1
+https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#unstack_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushleft_precondition_3
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_8	http://www.w3.org/2000/01/rdf-schema#label	(clear ?z)
+https://purl.org/ai4s/ontology/planning#put-down	http://www.w3.org/2000/01/rdf-schema#label	put-down
+https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushup_effect_7
+https://purl.org/ai4s/ontology/planning#movedown_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#movedown_effect_3	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pick-up	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pick-up_effect_1
+https://purl.org/ai4s/ontology/planning#hasPDDLTypeInstance	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#ProblemObject
+https://purl.org/ai4s/ontology/planning#pushdown_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?y)
+https://purl.org/ai4s/ontology/planning#unstack_effect_3	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushleft_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#ofParameterType	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#stack_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#put-down	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#put-down_effect_1
+https://purl.org/ai4s/ontology/planning#InitialState	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushright_effect_3	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_2	http://www.w3.org/2000/01/rdf-schema#label	(clear b1)
+https://purl.org/ai4s/ontology/planning#?x	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionParameter
+https://purl.org/ai4s/ontology/planning#moveleft_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(leftOf ?y ?x)
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?sokoban
+https://purl.org/ai4s/ontology/planning#moveleft	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#hasPredicate	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#movedown	http://www.w3.org/2000/01/rdf-schema#label	movedown
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#movedown
+https://purl.org/ai4s/ontology/planning#moveright_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?sokoban)
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#put-down_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#unstack_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(holding ?x)
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?sokoban
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveleft_precondition_1
+https://purl.org/ai4s/ontology/planning#pushleft_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(at ?crate ?z)
+https://purl.org/ai4s/ontology/planning#pushright_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?sokoban)
+https://purl.org/ai4s/ontology/planning#pushup_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveright_effect_3
+https://purl.org/ai4s/ontology/planning#stack_effect_3	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#unstack_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#hasMediumRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to a planner that has a medium relevance score for it
+https://purl.org/ai4s/ontology/planning#hasGoalState	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#stack_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(not (holding ?x))
+https://purl.org/ai4s/ontology/planning#?x	http://www.w3.org/2000/01/rdf-schema#label	?x
+https://purl.org/ai4s/ontology/planning#hasHighRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#Planner
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?sokoban
+https://purl.org/ai4s/ontology/planning#movedown_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pick-up_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#solvedBy	http://www.w3.org/2002/07/owl#inverseOf	https://purl.org/ai4s/ontology/planning#solvesRequirement
+https://purl.org/ai4s/ontology/planning#moveup_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#?crate	http://www.w3.org/2000/01/rdf-schema#label	?crate
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasObject	https://purl.org/ai4s/ontology/planning#b1
+https://purl.org/ai4s/ontology/planning#hasObject	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#ProblemObject
+https://purl.org/ai4s/ontology/planning#stack	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#stack_precondition_2
+https://purl.org/ai4s/ontology/planning#put-down_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#b1	http://www.w3.org/2000/01/rdf-schema#label	b1
+https://purl.org/ai4s/ontology/planning#moveleft_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#movedown_precondition_4
+https://purl.org/ai4s/ontology/planning#sokoban	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#PlanningDomain
+Ne23de23a656641f7a7cd84f1c207f8c8	http://www.w3.org/2002/07/owl#someValuesFrom	http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushright_precondition_7
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#moveup_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasRequirement	https://purl.org/ai4s/ontology/planning#:strips
+https://purl.org/ai4s/ontology/planning#put-down_effect_4	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_2	http://www.w3.org/2000/01/rdf-schema#label	(on b2 b1)
+https://purl.org/ai4s/ontology/planning#hasParameterType	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to a type
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#blocksworld_predicate_5
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_2	http://www.w3.org/2000/01/rdf-schema#label	(on b1 b4)
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#put-down
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushdown_effect_2
+https://purl.org/ai4s/ontology/planning#hasProblem	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning	http://www.w3.org/2002/07/owl#versionInfo	2.0
+https://purl.org/ai4s/ontology/planning#hasEffect	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#solvedBy	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a domain requirement to a planner that solves it
+https://purl.org/ai4s/ontology/planning#PlannerType	http://www.w3.org/2000/01/rdf-schema#comment	a category or classification of planners based on their characteristics or features
+https://purl.org/ai4s/ontology/planning#hasHighRelevancePlanner	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#pick-up_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pick-up_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#put-down_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?z
+https://purl.org/ai4s/ontology/planning#put-down_effect_3	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#movedown_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#hasConstant	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#blocksworld_predicate_4
+https://purl.org/ai4s/ontology/planning#pushleft_effect_7	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+https://purl.org/ai4s/ontology/planning	http://purl.org/dc/terms/license	https://creativecommons.org/licenses/by/4.0/legalcode
+https://purl.org/ai4s/ontology/planning#unstack_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushleft_effect_6	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#stack
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_4	http://www.w3.org/2000/01/rdf-schema#label	(below ?z ?y)
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushdown_precondition_7
+https://purl.org/ai4s/ontology/planning#DomainRequirement	http://www.w3.org/2000/01/rdf-schema#comment	A feature that a planning domain requires or supports
+https://purl.org/ai4s/ontology/planning#b2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ProblemObject
+https://purl.org/ai4s/ontology/planning#moveright_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#deletesPredicate	http://www.w3.org/2000/01/rdf-schema#range	http://purl.org/vocab/lifecycle/schema#State
+https://purl.org/ai4s/ontology/planning#pushdown_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasInitialState	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#pushdown_effect_7	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#PlanningDomain	http://www.w3.org/2000/01/rdf-schema#subClassOf	N3370974ed4844600a071b93daa5dc21f
+N7acc788b8aaa461c94cf80f28c101b8a	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#PlannerType
+N3370974ed4844600a071b93daa5dc21f	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#moveleft
+https://purl.org/ai4s/ontology/planning#Planner	http://www.w3.org/2000/01/rdf-schema#subClassOf	N7acc788b8aaa461c94cf80f28c101b8a
+https://purl.org/ai4s/ontology/planning#movedown_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#block	http://www.w3.org/2000/01/rdf-schema#label	block
+https://purl.org/ai4s/ontology/planning#pushleft_effect_6	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?z))
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushup_precondition_7
+Nf04f9537042c44b198fe5f12cc9cab87	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasObject
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?sokoban
+https://purl.org/ai4s/ontology/planning#stack_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#movedown_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?y)
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_3
+https://purl.org/ai4s/ontology/planning#moveleft_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#stack_effect_5	http://www.w3.org/2000/01/rdf-schema#label	(on ?x ?y)
+https://purl.org/ai4s/ontology/planning#?y	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionParameter
+https://purl.org/ai4s/ontology/planning#MacroAction	http://www.w3.org/2000/01/rdf-schema#comment	Extracted macro action, which is a combination of multiple actions of a planning domain
+https://purl.org/ai4s/ontology/planning#pushdown_effect_7	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?z))
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_4
+https://purl.org/ai4s/ontology/planning#PlanningDomain	http://www.w3.org/2000/01/rdf-schema#subClassOf	Nf8556ebf57f74d6cae9e01cef7e9d6e3
+https://purl.org/ai4s/ontology/planning#unstack_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_1
+https://purl.org/ai4s/ontology/planning#deletesPredicate	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#ActionEffect
+Nf8556ebf57f74d6cae9e01cef7e9d6e3	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#hasModelReconciliationExplanation	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#put-down_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#unstack_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushup_effect_1
+https://purl.org/ai4s/ontology/planning#moveup_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(below ?x ?y)
+https://purl.org/ai4s/ontology/planning#pushright_precondition_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushup_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#deletesPredicate	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#pick-up_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?x))
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?sokoban
+N7acc788b8aaa461c94cf80f28c101b8a	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#ofPlannerType
+https://purl.org/ai4s/ontology/planning#isGeneratedBy	http://www.w3.org/2000/01/rdf-schema#domain	http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveleft_effect_2
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushright_effect_7
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#PlanningProblem	http://www.w3.org/2000/01/rdf-schema#subClassOf	Nd13672c130eb44aa9fee488dc5ed6c14
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveleft_precondition_4
+https://purl.org/ai4s/ontology/planning#pick-up_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(holding ?x)
+https://purl.org/ai4s/ontology/planning#unstack_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushright_effect_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushdown_effect_5	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?crate ?y))
+https://purl.org/ai4s/ontology/planning#hasPlan	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning problem to a plan that solves it
+https://purl.org/ai4s/ontology/planning#pushright_precondition_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushleft_effect_6
+https://purl.org/ai4s/ontology/planning#movedown_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#stack_effect_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushup_effect_2
+http://caressesrobot.org/ontology#Parameter	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_7	http://www.w3.org/2000/01/rdf-schema#label	(at ?crate ?y)
+https://purl.org/ai4s/ontology/planning#movedown_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?x)
+https://purl.org/ai4s/ontology/planning#GoalState	http://www.w3.org/2000/01/rdf-schema#subClassOf	http://purl.org/vocab/lifecycle/schema#State
+https://purl.org/ai4s/ontology/planning#ProblemObject	http://www.w3.org/2000/01/rdf-schema#comment	represents an entity or a constant that is involved in a planning problem
+https://purl.org/ai4s/ontology/planning#pushdown_effect_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#hasPredicate	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to a domain predicate that is defined in it
+https://purl.org/ai4s/ontology/planning#movedown_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+https://purl.org/ai4s/ontology/planning#pick-up	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pick-up_effect_4
+N3370974ed4844600a071b93daa5dc21f	http://www.w3.org/2002/07/owl#someValuesFrom	http://caressesrobot.org/ontology#Action
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushdown_precondition_6
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#moveright_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+https://purl.org/ai4s/ontology/planning#pushup_precondition_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning	http://purl.org/dc/terms/title	Ontology to model Automated Planning domain
+https://purl.org/ai4s/ontology/planning#hasLowRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to a planner that has a low relevance score for it
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#DomainConstant	http://www.w3.org/2000/01/rdf-schema#comment	represents a fixed entity in a planning domain
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveleft_precondition_3
+https://purl.org/ai4s/ontology/planning#pick-up_effect_4	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushup_precondition_3
+https://purl.org/ai4s/ontology/planning#movedown_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushleft	http://www.w3.org/2000/01/rdf-schema#label	pushleft
+https://purl.org/ai4s/ontology/planning#hasAction	http://www.w3.org/2000/01/rdf-schema#range	http://caressesrobot.org/ontology#Action
+https://purl.org/ai4s/ontology/planning#pushright_precondition_7	http://www.w3.org/2000/01/rdf-schema#label	(clear ?z)
+https://purl.org/ai4s/ontology/planning#pushup_effect_6	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+Nf04f9537042c44b198fe5f12cc9cab87	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#unstack	http://www.w3.org/2000/01/rdf-schema#label	unstack
+https://purl.org/ai4s/ontology/planning#hasAction	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#moveup_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#hasRequirement	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain or problem to a domain requirement that is required or supported by it
+https://purl.org/ai4s/ontology/planning#stack_effect_1	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushright_effect_2
+http://purl.org/dc/terms/description	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#AnnotationProperty
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveup_effect_3
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#GoalState	http://www.w3.org/2000/01/rdf-schema#comment	represents a desired or a target state defined in a task that a plan should achieve
+https://purl.org/ai4s/ontology/planning#ParameterType	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?crate
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasObject	https://purl.org/ai4s/ontology/planning#b4
+https://purl.org/ai4s/ontology/planning#pick-up_effect_3	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushright_effect_6
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_5	http://www.w3.org/2000/01/rdf-schema#label	(ontable b4)
+https://purl.org/ai4s/ontology/planning#pushright_effect_7	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning	http://purl.org/dc/terms/creator	Bharath Muppasani
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#pushup_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(below ?x ?y)
+https://purl.org/ai4s/ontology/planning#hasPDDLTypeInstance	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#put-down	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+http://caressesrobot.org/ontology#Action	http://www.w3.org/2000/01/rdf-schema#subClassOf	N465de7963af541d2b6dd6e40a34efc80
+https://purl.org/ai4s/ontology/planning#pushright_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?sokoban ?x))
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#sokoban_predicate_3
+https://purl.org/ai4s/ontology/planning#PlanningProblem	http://www.w3.org/2000/01/rdf-schema#subClassOf	Nf04f9537042c44b198fe5f12cc9cab87
+https://purl.org/ai4s/ontology/planning#pushdown_effect_6	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+Nfcfebb1be87049d9bb80b7883f72b49d	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#pushup_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+Nef4148284d0548dbbd1e407528d0eb5e	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#pick-up_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(handempty)
+https://purl.org/ai4s/ontology/planning#pushdown_effect_5	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+Nf8556ebf57f74d6cae9e01cef7e9d6e3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Restriction
+https://purl.org/ai4s/ontology/planning#movedown_precondition_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#GoalState
+https://purl.org/ai4s/ontology/planning#hasPlanCost	http://www.w3.org/2000/01/rdf-schema#domain	http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushright_precondition_2
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning	http://purl.org/dc/terms/language	English
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushleft_precondition_5
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_4	http://www.w3.org/2000/01/rdf-schema#label	(clear b2)
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushright_effect_1
+https://purl.org/ai4s/ontology/planning#stack_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#addsPredicate	http://www.w3.org/2000/01/rdf-schema#range	http://purl.org/vocab/lifecycle/schema#State
+https://purl.org/ai4s/ontology/planning#b3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ProblemObject
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushdown_effect_5
+https://purl.org/ai4s/ontology/planning#put-down	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#put-down_effect_2
+https://purl.org/ai4s/ontology/planning#PlanningProblem	http://www.w3.org/2000/01/rdf-schema#comment	represents a task of the planning domain that requires a plan to be solved
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_4
+https://purl.org/ai4s/ontology/planning#hasActionExplanation	http://www.w3.org/2000/01/rdf-schema#domain	http://caressesrobot.org/ontology#Action
+https://purl.org/ai4s/ontology/planning#hasExtractedAction	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#stack_effect_5	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#moveright	http://www.w3.org/2000/01/rdf-schema#label	moveright
+https://purl.org/ai4s/ontology/planning#ParameterType	http://www.w3.org/2000/01/rdf-schema#comment	represents a kind of entity in a planning domain
+https://purl.org/ai4s/ontology/planning#moveleft_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#movedown_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#pick-up	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pick-up_precondition_1
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_5
+https://purl.org/ai4s/ontology/planning#pick-up	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pick-up_precondition_2
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#pick-up_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#addsPredicate	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#ActionEffect
+N29a6c5a08321409b8de6b748b84caecf	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#DomainRequirement
+https://purl.org/ai4s/ontology/planning#pushleft_effect_7	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasInitialState	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?sokoban
+https://purl.org/ai4s/ontology/planning#pushright_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#PlanningProblem	http://www.w3.org/2000/01/rdf-schema#subClassOf	Nef4148284d0548dbbd1e407528d0eb5e
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#unstack_effect_4
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_6	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?x)
+https://purl.org/ai4s/ontology/planning#moveleft_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_1	http://www.w3.org/2000/01/rdf-schema#label	(ontable b1)
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#hasPlan	http://www.w3.org/2000/01/rdf-schema#range	http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan
+https://purl.org/ai4s/ontology/planning#put-down_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(holding ?x)
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushright_effect_4
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_4	http://www.w3.org/2000/01/rdf-schema#label	(handempty)
+https://purl.org/ai4s/ontology/planning#stack_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(clear ?y)
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveup_effect_4
+https://purl.org/ai4s/ontology/planning#pushup_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?sokoban)
+https://purl.org/ai4s/ontology/planning#hasGoalState	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning problem to a goal state that is desired for it
+https://purl.org/ai4s/ontology/planning#hasEffect	http://www.w3.org/2000/01/rdf-schema#domain	http://caressesrobot.org/ontology#Action
+https://purl.org/ai4s/ontology/planning#moveleft_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?x)
+https://purl.org/ai4s/ontology/planning#moveleft_effect_1	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?y)
+https://purl.org/ai4s/ontology/planning#pushup_effect_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+Ncca1cddec3e541c78850bdd3176c6673	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#DomainRequirement
+https://purl.org/ai4s/ontology/planning#pushright_precondition_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#moveup	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+Nf04f9537042c44b198fe5f12cc9cab87	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#ProblemObject
+https://purl.org/ai4s/ontology/planning#unstack_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(handempty)
+https://purl.org/ai4s/ontology/planning#hasPlanExplanation	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#DatatypeProperty
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#unstack_precondition_3
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_1	http://www.w3.org/2000/01/rdf-schema#label	(on b1 b2)
+https://purl.org/ai4s/ontology/planning#moveright_precondition_3	http://www.w3.org/2000/01/rdf-schema#label	(leftOf ?x ?y)
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#unstack_precondition_2
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasObject	https://purl.org/ai4s/ontology/planning#b3
+https://purl.org/ai4s/ontology/planning#hasGoalState	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#pushdown_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?sokoban ?x))
+https://purl.org/ai4s/ontology/planning#pushleft_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#pushleft_effect_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_2
+https://purl.org/ai4s/ontology/planning#put-down_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(ontable ?x)
+https://purl.org/ai4s/ontology/planning#hasObject	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#unstack_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(clear ?y)
+http://purl.org/vocab/lifecycle/schema#State	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushup_precondition_4
+https://purl.org/ai4s/ontology/planning#pushright_effect_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_5
+https://purl.org/ai4s/ontology/planning#moveup_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#hasPDDLTypeInstance	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#ParameterType
+https://purl.org/ai4s/ontology/planning#pick-up	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pick-up_effect_2
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveup_precondition_4
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_7	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#sokoban_predicate_4
+https://purl.org/ai4s/ontology/planning#unstack_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushup_precondition_5	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?x)
+Nf8556ebf57f74d6cae9e01cef7e9d6e3	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasPredicate
+https://purl.org/ai4s/ontology/planning#hasPlanExplanation	http://www.w3.org/2000/01/rdf-schema#range	http://www.w3.org/2001/XMLSchema#string
+N4a099fc027ea4f63aa60b335a69c1128	http://www.w3.org/2002/07/owl#qualifiedCardinality	1
+https://purl.org/ai4s/ontology/planning#ActionEffect	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushright_precondition_4
+https://purl.org/ai4s/ontology/planning#moveright_effect_3	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasParameter	http://www.w3.org/2000/01/rdf-schema#range	http://caressesrobot.org/ontology#Parameter
+N6d2f09f7a4df4dbb90247becb71cc96e	http://www.w3.org/2002/07/owl#someValuesFrom	http://purl.org/vocab/lifecycle/schema#State
+https://purl.org/ai4s/ontology/planning#:strips	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainRequirement
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#moveup_effect_2
+https://purl.org/ai4s/ontology/planning#pushleft_effect_3	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasPredicate	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_6	http://www.w3.org/2000/01/rdf-schema#label	(at ?crate ?y)
+https://purl.org/ai4s/ontology/planning#ActionEffect	http://www.w3.org/2000/01/rdf-schema#subClassOf	N6d2f09f7a4df4dbb90247becb71cc96e
+https://purl.org/ai4s/ontology/planning#PlanningProblem	http://www.w3.org/2000/01/rdf-schema#subClassOf	Ne23de23a656641f7a7cd84f1c207f8c8
+https://purl.org/ai4s/ontology/planning	http://purl.org/dc/terms/description	This ontology represents the knowledge about automated planning domain. It captures the characteristics, features, and performance of different planners and domains, as well as the relationships between them. The ontology can be used to select suitable planners for a given domain and to improve their performance. The ontology aims to facilitate automated planning research and applications.
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_4	http://www.w3.org/2000/01/rdf-schema#label	(leftOf ?z ?y)
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushright_precondition_3
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#pick-up_effect_1	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pick-up_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(not (handempty))
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#moveup_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#PlanningDomain	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#stack_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+https://purl.org/ai4s/ontology/planning#hasExtractedAction	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#MacroAction
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#movedown_precondition_3
+https://purl.org/ai4s/ontology/planning#pushright_effect_2	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#movedown_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?sokoban)
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasObject	https://purl.org/ai4s/ontology/planning#b2
+https://purl.org/ai4s/ontology/planning#moveright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveright_precondition_4
+https://purl.org/ai4s/ontology/planning#?sokoban	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionParameter
+https://purl.org/ai4s/ontology/planning#hasPrecondition	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates an action to an action precondition that is required for it
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_3
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushdown_effect_4
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushdown_precondition_3
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushright_effect_3
+https://purl.org/ai4s/ontology/planning	http://www.w3.org/2000/01/rdf-schema#seeAlso	https://github.com/BharathMuppasani/AI-Planning-Ontology
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushup_effect_6
+https://purl.org/ai4s/ontology/planning#put-down_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+http://purl.org/dc/terms/license	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#AnnotationProperty
+https://purl.org/ai4s/ontology/planning#moveup_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?sokoban)
+https://purl.org/ai4s/ontology/planning#pushright_effect_2	http://www.w3.org/2000/01/rdf-schema#label	(at ?crate ?z)
+Nd13672c130eb44aa9fee488dc5ed6c14	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_6
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#problem-3-1	http://www.w3.org/2000/01/rdf-schema#label	problem-3-1
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushleft_precondition_2
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_2	http://www.w3.org/2000/01/rdf-schema#label	(crate ?x)
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_5	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?x)
+https://purl.org/ai4s/ontology/planning#movedown_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#moveleft_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?y))
+https://purl.org/ai4s/ontology/planning#put-down	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#put-down_effect_3
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasAction	https://purl.org/ai4s/ontology/planning#pick-up
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushup_precondition_6
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushright_effect_1	https://purl.org/ai4s/ontology/planning#addsPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushright_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_7
+https://purl.org/ai4s/ontology/planning#DomainPredicate	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#blocksworld_predicate_2
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushdown_precondition_2
+https://purl.org/ai4s/ontology/planning#unstack_precondition_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+Ne23de23a656641f7a7cd84f1c207f8c8	http://www.w3.org/2002/07/owl#onProperty	https://purl.org/ai4s/ontology/planning#hasPlan
+https://purl.org/ai4s/ontology/planning#pick-up	http://www.w3.org/2000/01/rdf-schema#label	pick-up
+https://purl.org/ai4s/ontology/planning#moveright_effect_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#movedown_effect_4
+https://purl.org/ai4s/ontology/planning#pushup_effect_5	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?crate ?y))
+https://purl.org/ai4s/ontology/planning#hasTag	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_1	http://www.w3.org/2000/01/rdf-schema#label	(handempty)
+https://purl.org/ai4s/ontology/planning#solvedBy	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#DomainRequirement
+https://purl.org/ai4s/ontology/planning#pick-up	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pick-up_effect_3
+https://purl.org/ai4s/ontology/planning#stack_effect_4	http://www.w3.org/2000/01/rdf-schema#label	(handempty)
+https://purl.org/ai4s/ontology/planning	http://purl.org/dc/terms/contributor	Bharath Muppasani, Vishal Pallagani, Biplav Srivastava, Raghava Mutharaju
+https://purl.org/ai4s/ontology/planning#pushleft_effect_1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#blocksworld_predicate_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainPredicate
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?y
+https://purl.org/ai4s/ontology/planning#hasLowRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#pushleft	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushleft_effect_7
+https://purl.org/ai4s/ontology/planning#Planner	http://www.w3.org/2000/01/rdf-schema#subClassOf	N29a6c5a08321409b8de6b748b84caecf
+https://purl.org/ai4s/ontology/planning#b2	http://www.w3.org/2000/01/rdf-schema#label	b2
+https://purl.org/ai4s/ontology/planning#hasPrecondition	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushup_effect_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#Planner	http://www.w3.org/2000/01/rdf-schema#comment	a system that can generate plans for a given planning domain and problem
+https://purl.org/ai4s/ontology/planning#pushleft_effect_3	http://www.w3.org/2000/01/rdf-schema#label	(clear ?x)
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#pushup_effect_5
+https://purl.org/ai4s/ontology/planning#stack	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#blocksworld	https://purl.org/ai4s/ontology/planning#hasProblem	https://purl.org/ai4s/ontology/planning#problem-3-1
+https://purl.org/ai4s/ontology/planning#moveleft	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_1	http://www.w3.org/2000/01/rdf-schema#label	(sokoban ?sokoban)
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_4	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#Planner	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#pushright	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#pushright_precondition_5
+https://purl.org/ai4s/ontology/planning#pushup_precondition_4	http://www.w3.org/2000/01/rdf-schema#label	(below ?y ?z)
+https://purl.org/ai4s/ontology/planning#problem-4-1	http://www.w3.org/2000/01/rdf-schema#label	problem-4-1
+https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#pushright_effect_5	http://www.w3.org/2000/01/rdf-schema#label	(not (at ?crate ?y))
+https://purl.org/ai4s/ontology/planning#hasExtractedAction	http://www.w3.org/2000/01/rdf-schema#comment	a property that relates a planning domain to an action that is extracted from its plan
+https://purl.org/ai4s/ontology/planning#pushup_effect_4	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasPrecondition	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#ObjectProperty
+https://purl.org/ai4s/ontology/planning#pushdown	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?z
+https://purl.org/ai4s/ontology/planning#pick-up_effect_2	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+http://purl.org/dc/terms/title	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#AnnotationProperty
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_1
+https://purl.org/ai4s/ontology/planning#sokoban_predicate_4	http://www.w3.org/2000/01/rdf-schema#label	(below ?x ?y)
+https://purl.org/ai4s/ontology/planning#pushup	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?z
+https://purl.org/ai4s/ontology/planning#moveright_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushright_precondition_5	http://www.w3.org/2000/01/rdf-schema#label	(at ?sokoban ?x)
+https://purl.org/ai4s/ontology/planning#pushdown_effect_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#ofPlannerType	http://www.w3.org/2000/01/rdf-schema#range	https://purl.org/ai4s/ontology/planning#PlannerType
+https://purl.org/ai4s/ontology/planning#pushright_effect_6	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#hasInitialState	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningProblem
+https://purl.org/ai4s/ontology/planning#pushright_effect_6	http://www.w3.org/2000/01/rdf-schema#label	(not (clear ?z))
+https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_3	http://www.w3.org/2000/01/rdf-schema#label	(on b2 b3)
+https://purl.org/ai4s/ontology/planning#pushup_precondition_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#pushleft_precondition_5	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#b1	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ProblemObject
+N30fd3e721ba84b11b118e3eb2f5a5213	http://www.w3.org/2002/07/owl#someValuesFrom	https://purl.org/ai4s/ontology/planning#Planner
+https://purl.org/ai4s/ontology/planning#moveright_precondition_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition
+https://purl.org/ai4s/ontology/planning#movedown	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#movedown_precondition_1
+https://purl.org/ai4s/ontology/planning#sokoban	https://purl.org/ai4s/ontology/planning#hasPredicate	https://purl.org/ai4s/ontology/planning#sokoban_predicate_2
+https://purl.org/ai4s/ontology/planning#moveright_effect_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_2
+https://purl.org/ai4s/ontology/planning#put-down	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#DomainAction
+https://purl.org/ai4s/ontology/planning#hasMediumRelevancePlanner	http://www.w3.org/2000/01/rdf-schema#domain	https://purl.org/ai4s/ontology/planning#PlanningDomain
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_1
+https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_2	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#InitialState
+https://purl.org/ai4s/ontology/planning#problem-3-1	https://purl.org/ai4s/ontology/planning#hasInitialState	https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_5
+http://caressesrobot.org/ontology#Action	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2002/07/owl#Class
+https://purl.org/ai4s/ontology/planning#moveup	https://purl.org/ai4s/ontology/planning#hasPrecondition	https://purl.org/ai4s/ontology/planning#moveup_precondition_2
+https://purl.org/ai4s/ontology/planning#problem-4-1	https://purl.org/ai4s/ontology/planning#hasGoalState	https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_3
+https://purl.org/ai4s/ontology/planning#pushdown_precondition_2	http://www.w3.org/2000/01/rdf-schema#label	(crate ?crate)
+https://purl.org/ai4s/ontology/planning#unstack	https://purl.org/ai4s/ontology/planning#hasEffect	https://purl.org/ai4s/ontology/planning#unstack_effect_5
+https://purl.org/ai4s/ontology/planning#pushup_effect_3	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionEffect
+https://purl.org/ai4s/ontology/planning#DomainPredicate	http://www.w3.org/2000/01/rdf-schema#comment	a class that represents a condition or a fact that can be true or false in a planning domain
+https://purl.org/ai4s/ontology/planning#pick-up	https://purl.org/ai4s/ontology/planning#hasParameter	https://purl.org/ai4s/ontology/planning#?x
+https://purl.org/ai4s/ontology/planning#?y	http://www.w3.org/2000/01/rdf-schema#label	?y
+https://purl.org/ai4s/ontology/planning#pushup_effect_5	https://purl.org/ai4s/ontology/planning#deletesPredicate	https://purl.org/ai4s/ontology/planning#State
+https://purl.org/ai4s/ontology/planning#pushup_precondition_6	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	https://purl.org/ai4s/ontology/planning#ActionPrecondition

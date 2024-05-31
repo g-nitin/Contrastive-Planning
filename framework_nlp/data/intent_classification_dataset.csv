@@ -1,0 +1,108 @@
+text,label
+Why is action A not included in the project roadmap?,1
+What are the reasons for excluding action A from the plan?,1
+Why was action A omitted from the strategy?,1
+Why didn't we consider action A for the project plan?,1
+Why was action A left out of the final plan?,1
+Why was action A chosen for the implementation?,2
+What made action A a suitable choice for the plan?,2
+Why did we decide to include action A in the strategy?,2
+What are the benefits of using action A in the plan?,2
+Why was action A prioritized in the project?,2
+Why is action A applied in state S instead of action B?,3
+What are the reasons for using action A over action B in state S?,3
+Why does the plan favor action A in state S over action B?,3
+What made action A a better choice than action B in state S?,3
+Why was action A preferred in state S instead of action B?,3
+Can you explain why action A is preferred to action B?,3
+Can you explain why action A is part of the plan?,2
+What is the rationale for not using action A in the plan?,1
+What are the reasons for using action A in the plan?,2
+Why was action A included in the plan?,2
+Why was action A excluded from the plan?,1
+What is the rationale for including action A in the plan?,2
+Why did the plan incorporate action A?,2
+What made action A more suitable than action B?,3
+Why did the plan opt for action A instead of action B?,3
+Can you explain why action A was not considered in the plan?,1
+What are the reasons for selecting action A rather than action B?,3
+What were the reasons for omitting action A from the plan?,1
+Why was action A chosen over action B?,3
+Why didn't the plan include action A?,1
+Why was 'push box to the left' excluded from the plan?,1
+What were the reasons for omitting 'push box to the left' from the plan?,1
+Can you explain why 'push box to the left' was not considered in the plan?,1
+Why didn't the plan include 'push box to the left'?,1
+What is the rationale for not using 'push box to the left' in the plan?,1
+The player doesn't push any boxes. Shouldn't pushing a box (action A) be part of the plan to reach the goals?,1
+"There are empty storage spaces, but the plan doesn't use action A (push box) to utilize them. Is there a reason for this?",1
+I noticed that action A is not included in the plan. Can you explain why?,1
+The plan seems to be missing action A. Is there a reason for this?,1
+Is there a specific reason why we're not considering action A?,1
+The data suggests action A might be helpful. Why isn't it part of the plan?,1
+Why was 'push box to the left' included in the plan?,2
+What are the reasons for using 'push box to the left' in the plan?,2
+Can you explain why 'push box to the left' is part of the plan?,2
+Why did the plan incorporate 'push box to the left'?,2
+What is the rationale for including 'push box to the left' in the plan?,2
+The plan involves the player pushing a box (action A) even though there are no empty storage spaces nearby. Can you explain the purpose?,2
+The solution seems to have the player moving a box diagonally (action A). Isn't this inefficient? Why is it used?,2
+I'm curious why action A is included in the plan. Can you elaborate?,2
+It looks like action A is being used in the plan. Can you explain the reasoning behind this?,2
+Can you explain the benefits of using action A in the plan?,2
+Why was 'push box to the left' chosen over 'move to the right'?,3
+What made 'push box to the left' more suitable than 'move to the right'?,3
+Can you explain why 'push box to the left' is preferred to 'move to the right'?,3
+Why did the plan opt for 'push box to the left' instead of 'move to the right'?,3
+What are the reasons for selecting 'push box to the left' rather than 'move to the right'?,3
+The plan has the player pushing a box to the left (action A). Wouldn't pushing it upwards (action B) be a shorter path?,3
+The solution uses action A (pull box) to get to the goal. But wouldn't pushing the box (action B) be a more strategic move to avoid getting stuck?,3
+"The plan uses action A, but wouldn't action B be a better choice? Why?",3
+I see that action A is chosen over action B in the plan. Can you explain the decision?,3
+What factors led to choosing action A over action B?,3
+Is there a specific drawback to using action B instead of action A?,3
+Why was 'rotate the top face clockwise' excluded from the plan?,1
+What were the reasons for omitting 'rotate the top face clockwise' from the plan?,1
+Can you explain why 'rotate the top face clockwise' was not considered in the plan?,1
+Why didn't the plan include 'rotate the top face clockwise'?,1
+What is the rationale for not using 'rotate the top face clockwise' in the plan?,1
+Why was 'rotate the top face clockwise' included in the plan?,2
+What are the reasons for using 'rotate the top face clockwise' in the plan?,2
+Can you explain why 'rotate the top face clockwise' is part of the plan?,2
+Why did the plan incorporate 'rotate the top face clockwise'?,2
+What is the rationale for including 'rotate the top face clockwise' in the plan?,2
+Why was 'rotate the top face clockwise' chosen over 'rotate the front face counterclockwise'?,3
+What made 'rotate the top face clockwise' more suitable than 'rotate the front face counterclockwise'?,3
+Can you explain why 'rotate the top face clockwise' is preferred to 'rotate the front face counterclockwise'?,3
+Why did the plan opt for 'rotate the top face clockwise' instead of 'rotate the front face counterclockwise'?,3
+What are the reasons for selecting 'rotate the top face clockwise' rather than 'rotate the front face counterclockwise'?,3
+Why was 'move the blank space up' excluded from the plan?,1
+What were the reasons for omitting 'move the blank space up' from the plan?,1
+Can you explain why 'move the blank space up' was not considered in the plan?,1
+Why didn't the plan include 'move the blank space up'?,1
+What is the rationale for not using 'move the blank space up' in the plan?,1
+Why was 'move the blank space up' included in the plan?,2
+What are the reasons for using 'move the blank space up' in the plan?,2
+Can you explain why 'move the blank space up' is part of the plan?,2
+Why did the plan incorporate 'move the blank space up'?,2
+What is the rationale for including 'move the blank space up' in the plan?,2
+Why was 'move the blank space up' chosen over 'move the blank space left'?,3
+What made 'move the blank space up' more suitable than 'move the blank space left'?,3
+Can you explain why 'move the blank space up' is preferred to 'move the blank space left'?,3
+Why did the plan opt for 'move the blank space up' instead of 'move the blank space left'?,3
+What are the reasons for selecting 'move the blank space up' rather than 'move the blank space left'?,3
+Why was 'move card to a free cell' excluded from the plan?,1
+What were the reasons for omitting 'move card to a free cell' from the plan?,1
+Can you explain why 'move card to a free cell' was not considered in the plan?,1
+Why didn't the plan include 'move card to a free cell'?,1
+What is the rationale for not using 'move card to a free cell' in the plan?,1
+Why was 'move card to a free cell' included in the plan?,2
+What are the reasons for using 'move card to a free cell' in the plan?,2
+Can you explain why 'move card to a free cell' is part of the plan?,2
+Why did the plan incorporate 'move card to a free cell'?,2
+What is the rationale for including 'move card to a free cell' in the plan?,2
+Why was 'move card to a free cell' chosen over 'move card to a foundation'?,3
+What made 'move card to a free cell' more suitable than 'move card to a foundation'?,3
+Can you explain why 'move card to a free cell' is preferred to 'move card to a foundation'?,3
+Why did the plan opt for 'move card to a free cell' instead of 'move card to a foundation'?,3
+What are the reasons for selecting 'move card to a free cell' rather than 'move card to a foundation'?,3

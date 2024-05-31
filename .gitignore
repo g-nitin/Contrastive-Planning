@@ -1,0 +1,8 @@
+AI-Planning-Ontology/
+apache-jena-fuseki-5.0.0/
+MJF/
+papers/
+rdflib/
+tests/
+.idea/
+.DS_Store
