@@ -6,3 +6,4 @@ rdflib/
 tests/
 .idea/
 .DS_Store
+intent_parsing/wandb/
