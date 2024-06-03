@@ -7,3 +7,4 @@ tests/
 .idea/
 .DS_Store
 intent_parsing/wandb/
+intent_parsing/__pycache__/
