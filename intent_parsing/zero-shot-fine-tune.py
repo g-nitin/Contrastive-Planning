@@ -4,6 +4,7 @@ from os import environ
 from pandas import read_csv
 from numpy import argmax
 from utils import get_best_available_device
+from datetime import datetime
 
 from datasets import Dataset, DatasetDict
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
@@ -43,7 +44,7 @@ def main():
 
     device = get_best_available_device()
     model.to(device)  # Move the model to device
-    print(f"Using device: {device}")
+    print(f"---Using device: {device}")
 
     # Step 5: Define training arguments
     training_args = TrainingArguments(
@@ -55,37 +56,6 @@ def main():
         num_train_epochs=3,
         weight_decay=0.01,
     )
-
-    # # Step 6: Define the compute_metrics function
-    # def compute_metrics(p):
-    #     pred, labels = p
-    #     pred = argmax(pred, axis=1)
-    #     precision, recall, f1, _ = precision_recall_fscore_support(labels, pred, average='weighted')
-    #     acc = accuracy_score(labels, pred)
-    #     return {'accuracy': acc, 'precision': precision, 'recall': recall, 'f1': f1}
-    
-    # def compute_metrics(p):
-    #     # Extract the logits and labels from the predictions
-    #     logits, labels = p.predictions, p.label_ids
-        
-    #     # Ensure logits are in the correct shape (batch_size, num_labels)
-    #     # If the logits are 3D (batch_size, sequence_length, num_labels)
-    #     if logits.ndim == 3:
-    #         # Take the first token's logits 
-    #         # (usually [CLS] token for classification)
-    #         logits = logits[:, 0, :]  
-
-    #     # Calculate the predicted labels
-    #     pred = argmax(logits, axis=1)
-        
-    #     # Calculate precision, recall, f1, and accuracy
-    #     precision, recall, f1, _ = precision_recall_fscore_support(
-    #         labels, pred, average='weighted')
-    #     acc = accuracy_score(labels, pred)
-        
-    #     return {'accuracy': acc, 'precision': precision, 
-    #             'recall': recall, 'f1': f1}
-    # Step 6: Define the compute_metrics function
     
     def compute_metrics(p):
         # Extract the logits and labels from the predictions
@@ -100,7 +70,7 @@ def main():
             logits = logits[:, 0, :]  # Take the first token's logits (usually [CLS] token for classification)
 
         # Calculate the predicted labels
-        pred = np.argmax(logits, axis=1)
+        pred = argmax(logits, axis=1)
         
         # Calculate precision, recall, f1, and accuracy
         precision, recall, f1, _ = precision_recall_fscore_support(labels, pred, average='weighted')
@@ -119,6 +89,17 @@ def main():
 
     # Step 8: Train the model
     trainer.train()
+
+    # Step 9: Evaluate the model
+    eval_result = trainer.evaluate()
+    print(eval_result)
+
+    # Step 10: Save the model and tokenizer 
+    # with date and time in the directory name
+    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
+    save_directory = f'/local/niting/saved_model_{current_time}'
+    model.save_pretrained(save_directory)
+    tokenizer.save_pretrained(save_directory)
 
 
 if __name__ == "__main__":
