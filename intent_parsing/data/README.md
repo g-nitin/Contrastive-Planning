@@ -5,7 +5,9 @@ This directory contains the data used in the `intent_parsing` project. These are
 2. Why is action A used in the plan, rather than not being used?
 3. Why is action A used in state S, rather than action B?
 
-All the csv files have been generated using the `data_generation.ipynb` file. More specifically,
+Currently, `sokoban_final_dataset.csv` contains grounded examples for the Sokoban domain.
+
+The subdirectory `extra` contains extra datasets. All the csv files have been generated using the `data_generation.ipynb` file in that directory. More specifically,
 - `lifted_dataset.csv` contains the lifted versions of the examples.
 - `sokoban_dataset.csv` contains examples from the Sokoban domain. 
 - `n_puzzle_dataset.csv` contains examples from the N-Puzzle domain.

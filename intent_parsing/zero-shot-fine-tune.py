@@ -12,7 +12,7 @@ from transformers import BartForSequenceClassification, BartTokenizer, Trainer, 
 
 def main():
     # Step 1: Read the CSV file using Pandas
-    df = read_csv('./data/combined_dataset.csv')
+    df = read_csv('data/extra/combined_dataset.csv')
 
     # Convert labels to start from 0
     df['label'] = df['label'] - 1
