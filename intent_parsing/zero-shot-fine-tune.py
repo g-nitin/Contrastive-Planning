@@ -12,7 +12,7 @@ from transformers import BartForSequenceClassification, BartTokenizer, Trainer, 
 
 def main():
     # Step 1: Read the CSV file using Pandas
-    df = read_csv('data/extra/combined_dataset.csv')
+    df = read_csv('data/sokoban_final_dataset.csv')
 
     # Convert labels to start from 0
     df['label'] = df['label'] - 1
@@ -64,27 +64,48 @@ def main():
     #     acc = accuracy_score(labels, pred)
     #     return {'accuracy': acc, 'precision': precision, 'recall': recall, 'f1': f1}
     
+    # def compute_metrics(p):
+    #     # Extract the logits and labels from the predictions
+    #     logits, labels = p.predictions, p.label_ids
+        
+    #     # Ensure logits are in the correct shape (batch_size, num_labels)
+    #     # If the logits are 3D (batch_size, sequence_length, num_labels)
+    #     if logits.ndim == 3:
+    #         # Take the first token's logits 
+    #         # (usually [CLS] token for classification)
+    #         logits = logits[:, 0, :]  
+
+    #     # Calculate the predicted labels
+    #     pred = argmax(logits, axis=1)
+        
+    #     # Calculate precision, recall, f1, and accuracy
+    #     precision, recall, f1, _ = precision_recall_fscore_support(
+    #         labels, pred, average='weighted')
+    #     acc = accuracy_score(labels, pred)
+        
+    #     return {'accuracy': acc, 'precision': precision, 
+    #             'recall': recall, 'f1': f1}
+    # Step 6: Define the compute_metrics function
+    
     def compute_metrics(p):
         # Extract the logits and labels from the predictions
         logits, labels = p.predictions, p.label_ids
+
+        # If logits is a tuple, extract the first element
+        if isinstance(logits, tuple):
+            logits = logits[0]
         
         # Ensure logits are in the correct shape (batch_size, num_labels)
-        # If the logits are 3D (batch_size, sequence_length, num_labels)
-        if logits.ndim == 3:
-            # Take the first token's logits 
-            # (usually [CLS] token for classification)
-            logits = logits[:, 0, :]  
+        if logits.ndim == 3:  # If the logits are 3D (batch_size, sequence_length, num_labels)
+            logits = logits[:, 0, :]  # Take the first token's logits (usually [CLS] token for classification)
 
         # Calculate the predicted labels
-        pred = argmax(logits, axis=1)
+        pred = np.argmax(logits, axis=1)
         
         # Calculate precision, recall, f1, and accuracy
-        precision, recall, f1, _ = precision_recall_fscore_support(
-            labels, pred, average='weighted')
+        precision, recall, f1, _ = precision_recall_fscore_support(labels, pred, average='weighted')
         acc = accuracy_score(labels, pred)
-        
-        return {'accuracy': acc, 'precision': precision, 
-                'recall': recall, 'f1': f1}
+        return {'accuracy': acc, 'precision': precision, 'recall': recall, 'f1': f1}
 
 
     # Step 7: Initialize Trainer

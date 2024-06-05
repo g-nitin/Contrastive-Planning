@@ -6,8 +6,8 @@
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=40
-#SBATCH --gres=gpu:1
-#SBATCH -p gpu-v100-32gb
+# SBATCH --gres=gpu:1
+#SBATCH -p defq-64core
 
 #SBATCH --mail-user=niting@email.sc.edu
 #SBATCH --mail-type=ALL
