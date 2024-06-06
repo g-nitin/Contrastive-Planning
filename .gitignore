@@ -8,4 +8,5 @@ tests/
 .DS_Store
 intent_parsing/wandb/
 intent_parsing/__pycache__/
+intent_parsing/saved_models/
 sclurm_outs/

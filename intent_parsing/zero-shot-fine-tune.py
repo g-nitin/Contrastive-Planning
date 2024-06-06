@@ -1,6 +1,6 @@
 import wandb
 
-from os import environ
+from os import environ, listdir, path, system
 from pandas import read_csv
 from numpy import argmax
 from utils import get_best_available_device
@@ -47,16 +47,23 @@ def main():
     print(f"---Using device: {device}")
 
     # Step 5: Define training arguments
+    out_dir = "./fine-tune_results"
     training_args = TrainingArguments(
-        output_dir='./results',
         report_to="wandb",
-        eval_strategy='epoch',
-        per_device_train_batch_size=8,
-        per_device_eval_batch_size=8,
+        output_dir=out_dir,
+        eval_strategy='steps',
+        eval_steps=1000,                # Evaluate every 1000 steps
+        per_device_train_batch_size=2,
+        per_device_eval_batch_size=2,
+        gradient_accumulation_steps=8,  # Accumulate gradients over 4 steps
         num_train_epochs=3,
         weight_decay=0.01,
+        fp16=True,                      # Enable mixed precision training
+        logging_steps=500,              # Log less frequently
+        save_total_limit=1,             # Limit the total number of checkpoints
+        save_steps=1000,                # Save checkpoint every 1000 steps
     )
-    
+
     def compute_metrics(p):
         # Extract the logits and labels from the predictions
         logits, labels = p.predictions, p.label_ids
@@ -87,19 +94,50 @@ def main():
         compute_metrics=compute_metrics
     )
 
-    # Step 8: Train the model
-    trainer.train()
+    # Step 8: Monitor Disk Space and Add Debug Prints
+    def clear_checkpoints():
+        checkpoints = [f for f in listdir(out_dir) if 'checkpoint' in f]
+        for checkpoint in checkpoints:
+            path = path.join('./results', checkpoint)
+            if path.isdir(path):
+                print(f"Deleting checkpoint: {path}")
+                system(f"rm -rf {path}")
 
-    # Step 9: Evaluate the model
-    eval_result = trainer.evaluate()
-    print(eval_result)
+    # Function to monitor disk space (debugging purpose)
+    def monitor_disk_space():
+        import shutil
+        total, used, free = shutil.disk_usage("./")
+        print(f"Disk usage: {used / (2**30):.2f} GB used, {free / (2**30):.2f} GB free")
 
-    # Step 10: Save the model and tokenizer 
+    # Step 9: Train the model with intermediate cleanup and verbose output
+    try:
+        for epoch in range(training_args.num_train_epochs):
+            print(f"Epoch {epoch+1}/{training_args.num_train_epochs}")
+            trainer.train()
+            clear_checkpoints()
+            monitor_disk_space()
+        print("--Training finished.")
+    except Exception as e:
+        print(f"Error during training: {e}")
+
+    # Step 10: Evaluate the model
+    try:
+        eval_result = trainer.evaluate()
+        print(eval_result)
+        print("--Evaluation finished.")
+    except Exception as e:
+        print(f"Error during evaluation: {e}")
+
+    # Step 11: Save the model and tokenizer 
     # with date and time in the directory name
     current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-    save_directory = f'/local/niting/saved_model_{current_time}'
-    model.save_pretrained(save_directory)
-    tokenizer.save_pretrained(save_directory)
+    save_directory = f'saved_models/saved_model_{current_time}'
+    try:
+        model.save_pretrained(save_directory)
+        tokenizer.save_pretrained(save_directory)
+        print(f"--Model saved at {save_directory}")
+    except Exception as e:
+        print(f"Error during model saving: {e}")
 
 
 if __name__ == "__main__":
@@ -111,5 +149,10 @@ if __name__ == "__main__":
 
     # turn off watch to log faster
     environ["WANDB_WATCH"] = "false"
+
+    tempDir = "/local/niting/"
+    environ['TRANSFORMERS_CACHE'] = tempDir
+    environ['HF_DATASETS_CACHE'] = tempDir
+    environ['HF_HOME'] = tempDir
     
     main()
