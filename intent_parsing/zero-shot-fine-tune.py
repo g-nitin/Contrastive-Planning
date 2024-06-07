@@ -7,12 +7,15 @@ from datetime import datetime
 
 from pandas import read_csv
 from numpy import argmax
-from datasets import Dataset, DatasetDict, concatenate_datasets
-from torch import no_grad
+from datasets import Dataset, DatasetDict
 from sklearn.metrics import (
     accuracy_score, precision_recall_fscore_support, classification_report)
 from transformers import (
     BartForSequenceClassification, BartTokenizer, Trainer, TrainingArguments)
+
+"""
+This script demonstrates how to fine-tune a pre-trained model on a dataset.
+"""
 
 
 def ensure_logit_shape(logits):
@@ -116,7 +119,6 @@ def main():
         
         return {'accuracy': acc, 'precision': precision,
                 'recall': recall, 'f1': f1}
-
 
     # Step 7: Initialize Trainer
     trainer = Trainer(

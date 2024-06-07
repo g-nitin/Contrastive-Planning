@@ -7,6 +7,10 @@ from sklearn.metrics import classification_report, accuracy_score
 import torch
 import argparse
 
+"""
+This script demonstrates how to test the fine-tuned model on a single query and on an entire dataset.
+"""
+
 
 def single_query(classify_query):
     """Test the fine-tuned model on a single query."""
