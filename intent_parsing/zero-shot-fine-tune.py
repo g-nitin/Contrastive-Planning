@@ -1,19 +1,48 @@
+import argparse
 import wandb
 
-from os import environ, listdir, path, system
-from pandas import read_csv
-from numpy import argmax
+from os import environ
 from utils import get_best_available_device
 from datetime import datetime
 
-from datasets import Dataset, DatasetDict
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-from transformers import BartForSequenceClassification, BartTokenizer, Trainer, TrainingArguments
+from pandas import read_csv
+from numpy import argmax
+from datasets import Dataset, DatasetDict, concatenate_datasets
+from torch import no_grad
+from sklearn.metrics import (
+    accuracy_score, precision_recall_fscore_support, classification_report)
+from transformers import (
+    BartForSequenceClassification, BartTokenizer, Trainer, TrainingArguments)
+
+
+def ensure_logit_shape(logits):
+    # If logits is a tuple, extract the first element
+    if isinstance(logits, tuple):
+        logits = logits[0]
+    
+    # Ensure logits are in the correct shape (batch_size, num_labels)
+    # If the logits are 3D (batch_size, sequence_length, num_labels)
+    if logits.ndim == 3:
+        # Take the first token's logits 
+        # (usually [CLS] token for classification)
+        logits = logits[:, 0, :]  
+
+    return logits
 
 
 def main():
+    # Initialize parser
+    parser = argparse.ArgumentParser()
+
+    # Adding optional argument
+    parser.add_argument("dataset")
+
+    # Load the model and tokenizer
+    dataset_path = parser.parse_args().dataset
+    print(f"Reading dataset from {dataset_path}")
+
     # Step 1: Read the CSV file using Pandas
-    df = read_csv('data/sokoban_final_dataset.csv')
+    df = read_csv(dataset_path)
 
     # Convert labels to start from 0
     df['label'] = df['label'] - 1
@@ -31,20 +60,24 @@ def main():
 
     # Step 4: Set up the tokenizer and model
     tokenizer = BartTokenizer.from_pretrained('facebook/bart-large-mnli')
-    model = BartForSequenceClassification.from_pretrained('facebook/bart-large-mnli', num_labels=3)
+    model = BartForSequenceClassification.from_pretrained(
+        'facebook/bart-large-mnli', num_labels=3)
 
     # Tokenize the dataset
     def preprocess_function(examples):
-        return tokenizer(examples['text'], padding='max_length', truncation=True)
+        return tokenizer(examples['text'], 
+                         padding='max_length', 
+                         truncation=True)
 
     encoded_dataset = dataset_dict.map(preprocess_function, batched=True)
 
     # Set format for PyTorch
-    encoded_dataset.set_format(type='torch', columns=['input_ids', 'attention_mask', 'label'])
+    encoded_dataset.set_format(
+        type='torch', columns=['input_ids', 'attention_mask', 'label'])
 
     device = get_best_available_device()
     model.to(device)  # Move the model to device
-    print(f"---Using device: {device}")
+    print(f"\nUsing device: {device}\n")
 
     # Step 5: Define training arguments
     out_dir = "./fine-tune_results"
@@ -53,36 +86,33 @@ def main():
         output_dir=out_dir,
         eval_strategy='steps',
         eval_steps=1000,                # Evaluate every 1000 steps
-        per_device_train_batch_size=2,
-        per_device_eval_batch_size=2,
-        gradient_accumulation_steps=8,  # Accumulate gradients over 4 steps
+        per_device_train_batch_size=8,
+        per_device_eval_batch_size=8,
+        gradient_accumulation_steps=1,  # Accumulate gradients over `n` steps
         num_train_epochs=3,
         weight_decay=0.01,
         fp16=True,                      # Enable mixed precision training
-        logging_steps=500,              # Log less frequently
-        save_total_limit=1,             # Limit the total number of checkpoints
-        save_steps=1000,                # Save checkpoint every 1000 steps
+        logging_steps=100,              # Log frequency
+        save_total_limit=2,             # Limit the total number of checkpoints
+        save_steps=500,                 # Save checkpoint every `n` steps
     )
 
     def compute_metrics(p):
         # Extract the logits and labels from the predictions
         logits, labels = p.predictions, p.label_ids
 
-        # If logits is a tuple, extract the first element
-        if isinstance(logits, tuple):
-            logits = logits[0]
-        
-        # Ensure logits are in the correct shape (batch_size, num_labels)
-        if logits.ndim == 3:  # If the logits are 3D (batch_size, sequence_length, num_labels)
-            logits = logits[:, 0, :]  # Take the first token's logits (usually [CLS] token for classification)
+        logits = ensure_logit_shape(logits)
 
         # Calculate the predicted labels
         pred = argmax(logits, axis=1)
         
         # Calculate precision, recall, f1, and accuracy
-        precision, recall, f1, _ = precision_recall_fscore_support(labels, pred, average='weighted')
+        precision, recall, f1, _ = precision_recall_fscore_support(
+            labels, pred, average='weighted')
         acc = accuracy_score(labels, pred)
-        return {'accuracy': acc, 'precision': precision, 'recall': recall, 'f1': f1}
+        
+        return {'accuracy': acc, 'precision': precision,
+                'recall': recall, 'f1': f1}
 
 
     # Step 7: Initialize Trainer
@@ -93,51 +123,115 @@ def main():
         eval_dataset=encoded_dataset['test'],
         compute_metrics=compute_metrics
     )
+    
+    # Step 8: Train the model
+    trainer.train()
+    print(f"\nTraining Complete")
 
-    # Step 8: Monitor Disk Space and Add Debug Prints
-    def clear_checkpoints():
-        checkpoints = [f for f in listdir(out_dir) if 'checkpoint' in f]
-        for checkpoint in checkpoints:
-            path = path.join('./results', checkpoint)
-            if path.isdir(path):
-                print(f"Deleting checkpoint: {path}")
-                system(f"rm -rf {path}")
+    # Step 9: Evaluate the model
+    eval_result = trainer.evaluate()
+    print(eval_result)
+    print(f"\nEvaluation Complete")
 
-    # Function to monitor disk space (debugging purpose)
-    def monitor_disk_space():
-        import shutil
-        total, used, free = shutil.disk_usage("./")
-        print(f"Disk usage: {used / (2**30):.2f} GB used, {free / (2**30):.2f} GB free")
+    # Make predictions on the test dataset
+    preds_output = trainer.predict(encoded_dataset['test'])
+    logits = preds_output.predictions
 
-    # Step 9: Train the model with intermediate cleanup and verbose output
-    try:
-        for epoch in range(training_args.num_train_epochs):
-            print(f"Epoch {epoch+1}/{training_args.num_train_epochs}")
-            trainer.train()
-            clear_checkpoints()
-            monitor_disk_space()
-        print("--Training finished.")
-    except Exception as e:
-        print(f"Error during training: {e}")
+    logits = ensure_logit_shape(logits)
 
-    # Step 10: Evaluate the model
-    try:
-        eval_result = trainer.evaluate()
-        print(eval_result)
-        print("--Evaluation finished.")
-    except Exception as e:
-        print(f"Error during evaluation: {e}")
+    predictions = argmax(logits, axis=1)
+    labels = preds_output.label_ids
 
-    # Step 11: Save the model and tokenizer 
+    # Generate and print the classification report
+    report = classification_report(labels, predictions, 
+        target_names=['intent 1', 'intent 2', 'intent 3'])
+    print("\nClassification Report for Fine-tuned Model on Evaluation Set:")
+    print(report)
+
+    # Calculate and print accuracy for the fine-tuned model
+    fine_tuned_accuracy = accuracy_score(labels, predictions)
+    print(f"Accuracy for Fine-tuned Model: {fine_tuned_accuracy:.2f}")
+
+    # Step 10: Save the model and tokenizer 
     # with date and time in the directory name
     current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     save_directory = f'saved_models/saved_model_{current_time}'
-    try:
-        model.save_pretrained(save_directory)
-        tokenizer.save_pretrained(save_directory)
-        print(f"--Model saved at {save_directory}")
-    except Exception as e:
-        print(f"Error during model saving: {e}")
+    model.save_pretrained(save_directory)
+    tokenizer.save_pretrained(save_directory)
+    print(f"\nModel saved at {save_directory}")
+
+    # Step 11: Evaluate the base model on the same test set
+    base_model = BartForSequenceClassification.from_pretrained(
+        'facebook/bart-large-mnli', num_labels=3)
+    base_model.to(device)
+
+    # Get the predictions for the test set using the base model
+    base_predictions = []
+    for example in encoded_dataset['test']:
+        # Use the preprocessed input_ids and attention_mask directly
+        # Add batch dimension and move to device
+        input_ids = example['input_ids'].unsqueeze(0).to(device)
+        attention_mask = example['attention_mask'].unsqueeze(0).to(device)
+        
+        with no_grad():
+            logits = base_model(
+                input_ids=input_ids, attention_mask=attention_mask).logits
+        
+        logits = ensure_logit_shape(logits)
+        
+        pred = argmax(logits.cpu().numpy(), axis=1)
+        base_predictions.extend(pred)
+
+    # Generate and print the classification report for the base model
+    base_labels = encoded_dataset['test']['label']
+    base_report = classification_report(base_labels, base_predictions,
+        target_names=['intent 1', 'intent 2', 'intent 3'])
+    
+    print("\nClassification Report for Base Model on Evaluation Set:")
+    print(base_report)
+
+    # Calculate and print accuracy for the base model
+    base_accuracy = accuracy_score(base_labels, base_predictions)
+    print(f"Accuracy for Base Model: {base_accuracy:.2f}")
+
+    # Step 12: Evaluate the base model on the combined dataset (train + test)
+
+    # Combine train and test datasets
+    combined_dataset = concatenate_datasets(
+        [encoded_dataset['train'], encoded_dataset['test']])
+
+    # Get the predictions for the combined dataset using the base model
+    base_predictions = []
+    combined_labels = []
+
+    for example in combined_dataset:
+        # Use the preprocessed input_ids and attention_mask directly
+        # Add batch dimension and move to device
+        input_ids = example['input_ids'].unsqueeze(0).to(device)
+        attention_mask = example['attention_mask'].unsqueeze(0).to(device)
+        
+        with no_grad():
+            logits = base_model(
+                input_ids=input_ids, attention_mask=attention_mask).logits
+        
+        logits = ensure_logit_shape(logits)
+        
+        pred = argmax(logits.cpu().numpy(), axis=1)
+        base_predictions.extend(pred)
+        combined_labels.append(example['label'].cpu().numpy())
+
+    # Generate and print the classification report 
+    # for the base model on the combined dataset
+    base_report_combined = classification_report(
+        combined_labels, base_predictions, 
+        target_names=['intent 1', 'intent 2', 'intent 3'])
+    print("\nClassification Report for Base Model on Combined Dataset:")
+    print(base_report_combined)
+
+    # Calculate and print accuracy for the base model on the combined dataset
+    base_accuracy_combined = accuracy_score(combined_labels, base_predictions)
+    print(f"Accuracy for Base Model on Combined Dataset: \
+        {base_accuracy_combined:.2f}")
 
 
 if __name__ == "__main__":

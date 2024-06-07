@@ -17,7 +17,7 @@ echo $CONDA_DEFAULT_ENV
 
 #Run script
 hostname
-python3 zero-shot-fine-tune-test.py 'saved_models/saved_model_20240606_120530'
+python3 zero-shot-fine-tune-test.py 'saved_models/saved_model_20240606_215351'
 
 #Exit the conda system
 conda deactivate

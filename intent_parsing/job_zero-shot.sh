@@ -19,7 +19,7 @@ echo $CONDA_DEFAULT_ENV
 
 #Run script
 hostname
-python3 zero-shot-fine-tune.py
+python3 zero-shot-fine-tune.py 'data/sokoban_final_dataset.csv'
 
 #Exit the conda system
 conda deactivate

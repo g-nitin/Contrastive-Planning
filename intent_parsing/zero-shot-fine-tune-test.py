@@ -31,7 +31,7 @@ candidate_labels = ["Why is action A not used in the plan?",
                     "Why is action A used rather than action B?"]
 
 intent_to_label = {label: intent for label, intent in zip(
-    candidate_labels, range(1, 4))}
+    candidate_labels, range(0, 3))}
 
 # Load a pre-trained zero-shot classification pipeline
 classifier = pipeline("zero-shot-classification", 
