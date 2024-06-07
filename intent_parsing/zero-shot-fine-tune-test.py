@@ -1,55 +1,101 @@
-from transformers import BartForSequenceClassification, BartTokenizer, pipeline
+from transformers import BartForSequenceClassification, BartTokenizer
+from pandas import read_csv
+from pprint import pprint
 from utils import get_best_available_device
-import pandas as pd
 from sklearn.metrics import classification_report, accuracy_score
+
+import torch
 import argparse
 
-# Initialize parser
-parser = argparse.ArgumentParser()
- 
-# Adding optional argument
-parser.add_argument("model_path")
 
-# Load the model and tokenizer
-saved_dir = parser.parse_args().model_path  # Read arguments from Command Line
-print(f"Reading model from {saved_dir}")
+def single_query(classify_query):
+    """Test the fine-tuned model on a single query."""
+    
+    # Test the model with a new query
+    new_query = "Why do we push the block at state S3 \
+        instead of moving it to the right at S4?"
+    
+    predicted_intent = classify_query(new_query)
+    print(f"Query: {new_query}")
+    print(f"Predicted intent: {predicted_intent}")
 
-model = BartForSequenceClassification.from_pretrained(saved_dir)
-tokenizer = BartTokenizer.from_pretrained(saved_dir)
 
-device = get_best_available_device()
-model.to(device)  # Move the model to device
-print(f"---Using device: {device}")
+def entire_dataset(df, label_mapping, classify_query, save_path=None):
+    """Test the fine-tuned model on a dataset."""
 
-# Load the CSV file into a DataFrame
-df = pd.read_csv('data/sokoban_final_dataset.csv')
-print(f"Number of rows in the dataset: {df.shape[0]}\n")
+    queries = df['text'].tolist()
+    true_labels = df['intent'].tolist()
 
-# Define the candidate labels and their corresponding intent numbers
-candidate_labels = ["Why is action A not used in the plan?", 
-                    "Why is action A used in the plan?", 
-                    "Why is action A used rather than action B?"]
+    # Classify all queries
+    predicted_labels = [classify_query(query) for query in queries]
 
-intent_to_label = {label: intent for label, intent in zip(
-    candidate_labels, range(0, 3))}
+    # Add the predicted intents to the DataFrame
+    df['predicted_intent'] = predicted_labels
 
-# Load a pre-trained zero-shot classification pipeline
-classifier = pipeline("zero-shot-classification", 
-                      model=model, tokenizer=tokenizer)
+    # Generate the classification report
+    print(classification_report(true_labels, predicted_labels, 
+            target_names=[f"intent_{val}" for val in label_mapping.values()]))
+    print(f"Accuracy: {accuracy_score(true_labels, predicted_labels):.2f}")
 
-# Function to get predictions for each text
-def get_prediction(text):
-    result = classifier(text, candidate_labels)
-    predicted_label = intent_to_label[result['labels'][0]]
-    return predicted_label
+    # Save the DataFrame with predictions to a new CSV file
+    if save_path:
+        df.to_csv(save_path, index=False)
 
-# Apply the function to the text column
-df['predicted_label'] = df['text'].apply(get_prediction)
 
-# Compare predicted labels with actual labels
-y_true = df['label']
-y_pred = df['predicted_label']
+if __name__=="__main__":
+    # Initialize parser
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument("dataset_path")
+    parser.add_argument("model_path")
 
-# Print the classification report
-print(classification_report(y_true, y_pred))
-print(f"Accuracy: {accuracy_score(y_true, y_pred):.2f}")
+    # Load the model and tokenizer
+    dataset_path = parser.parse_args().dataset_path
+    saved_dir = parser.parse_args().model_path
+
+    print(f"Reading dataset from {dataset_path}")
+    print(f"Reading model from {saved_dir}")
+
+    device = get_best_available_device()
+    print(f"---Using device: {device}")
+
+    df = read_csv(dataset_path)
+
+    # Encode the labels to numerical values
+    label_mapping = {label: idx for idx, label in 
+                     enumerate(df['intent'].unique())}
+    pprint(label_mapping)
+
+    base_model_name = "facebook/bart-large-mnli"
+    model = BartForSequenceClassification.from_pretrained(
+        base_model_name, num_labels=3)
+    model.to(device)
+    tokenizer = BartTokenizer.from_pretrained(base_model_name)
+
+    # Function to classify new queries
+    def classify_query(query):
+        inputs = tokenizer(query, return_tensors="pt", padding=True, 
+                        truncation=True, max_length=512)
+        inputs.to(device)
+        outputs = model(**inputs)
+        logits = outputs.logits
+        predicted_class_id = torch.argmax(logits, dim=-1).item()
+        predicted_label = list(label_mapping.keys())[predicted_class_id]
+        return predicted_label
+
+    print("\nPredicting a single query on the base model...")
+    single_query(classify_query)
+    
+    print("\nPredicting labels for the base model...")
+    entire_dataset(df, label_mapping, classify_query, None)
+
+    # Load the fine-tuned model and tokenizer for inference
+    model = BartForSequenceClassification.from_pretrained(saved_dir)
+    model.to(device)  # Move the model to device
+    tokenizer = BartTokenizer.from_pretrained(saved_dir)
+
+    print("\nPredicting a single query on the fine-tuned model...")
+    single_query(classify_query)
+    
+    print("\nPredicting labels for the fine-tuned model...")
+    entire_dataset(df, label_mapping, classify_query, None)

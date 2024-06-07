@@ -34,25 +34,28 @@ def main():
     # Initialize parser
     parser = argparse.ArgumentParser()
 
-    # Adding optional argument
-    parser.add_argument("dataset")
+    parser.add_argument("dataset_path")
 
     # Load the model and tokenizer
-    dataset_path = parser.parse_args().dataset
+    dataset_path = parser.parse_args().dataset_path
     print(f"Reading dataset from {dataset_path}")
 
     # Step 1: Read the CSV file using Pandas
     df = read_csv(dataset_path)
 
-    # Convert labels to start from 0
-    df['label'] = df['label'] - 1
+    # Encode the labels to numerical values
+    label_mapping = {label: idx for idx, label in \
+                     enumerate(df['intent'].unique())}
+    df['label'] = df['intent'].map(label_mapping)
 
     # Step 2: Convert the Pandas DataFrame to a Hugging Face Dataset
     dataset = Dataset.from_pandas(df)
     dataset = dataset.class_encode_column("label")
 
     # Step 3: Split the dataset into training and testing sets
-    split = dataset.train_test_split(test_size=0.2, stratify_by_column="label", seed=13)
+    split = dataset.train_test_split(test_size=0.2,
+
+                                     stratify_by_column="label", seed=13)
     dataset_dict = DatasetDict({
         'train': split['train'],
         'test': split['test']
@@ -159,79 +162,6 @@ def main():
     model.save_pretrained(save_directory)
     tokenizer.save_pretrained(save_directory)
     print(f"\nModel saved at {save_directory}")
-
-    # Step 11: Evaluate the base model on the same test set
-    base_model = BartForSequenceClassification.from_pretrained(
-        'facebook/bart-large-mnli', num_labels=3)
-    base_model.to(device)
-
-    # Get the predictions for the test set using the base model
-    base_predictions = []
-    for example in encoded_dataset['test']:
-        # Use the preprocessed input_ids and attention_mask directly
-        # Add batch dimension and move to device
-        input_ids = example['input_ids'].unsqueeze(0).to(device)
-        attention_mask = example['attention_mask'].unsqueeze(0).to(device)
-        
-        with no_grad():
-            logits = base_model(
-                input_ids=input_ids, attention_mask=attention_mask).logits
-        
-        logits = ensure_logit_shape(logits)
-        
-        pred = argmax(logits.cpu().numpy(), axis=1)
-        base_predictions.extend(pred)
-
-    # Generate and print the classification report for the base model
-    base_labels = encoded_dataset['test']['label']
-    base_report = classification_report(base_labels, base_predictions,
-        target_names=['intent 1', 'intent 2', 'intent 3'])
-    
-    print("\nClassification Report for Base Model on Evaluation Set:")
-    print(base_report)
-
-    # Calculate and print accuracy for the base model
-    base_accuracy = accuracy_score(base_labels, base_predictions)
-    print(f"Accuracy for Base Model: {base_accuracy:.2f}")
-
-    # Step 12: Evaluate the base model on the combined dataset (train + test)
-
-    # Combine train and test datasets
-    combined_dataset = concatenate_datasets(
-        [encoded_dataset['train'], encoded_dataset['test']])
-
-    # Get the predictions for the combined dataset using the base model
-    base_predictions = []
-    combined_labels = []
-
-    for example in combined_dataset:
-        # Use the preprocessed input_ids and attention_mask directly
-        # Add batch dimension and move to device
-        input_ids = example['input_ids'].unsqueeze(0).to(device)
-        attention_mask = example['attention_mask'].unsqueeze(0).to(device)
-        
-        with no_grad():
-            logits = base_model(
-                input_ids=input_ids, attention_mask=attention_mask).logits
-        
-        logits = ensure_logit_shape(logits)
-        
-        pred = argmax(logits.cpu().numpy(), axis=1)
-        base_predictions.extend(pred)
-        combined_labels.append(example['label'].cpu().numpy())
-
-    # Generate and print the classification report 
-    # for the base model on the combined dataset
-    base_report_combined = classification_report(
-        combined_labels, base_predictions, 
-        target_names=['intent 1', 'intent 2', 'intent 3'])
-    print("\nClassification Report for Base Model on Combined Dataset:")
-    print(base_report_combined)
-
-    # Calculate and print accuracy for the base model on the combined dataset
-    base_accuracy_combined = accuracy_score(combined_labels, base_predictions)
-    print(f"Accuracy for Base Model on Combined Dataset: \
-        {base_accuracy_combined:.2f}")
 
 
 if __name__ == "__main__":
