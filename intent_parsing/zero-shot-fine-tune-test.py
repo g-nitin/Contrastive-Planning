@@ -16,8 +16,7 @@ def single_query(classify_query):
     """Test the fine-tuned model on a single query."""
     
     # Test the model with a new query
-    new_query = "Why do we push the block at state S3 \
-        instead of moving it to the right at S4?"
+    new_query = "Why do we push the block at state S3 instead of moving it to the right at S4?"
     
     predicted_intent = classify_query(new_query)
     print(f"Query: {new_query}")
@@ -38,7 +37,7 @@ def entire_dataset(df, label_mapping, classify_query, save_path=None):
 
     # Generate the classification report
     print(classification_report(true_labels, predicted_labels, 
-            target_names=[f"intent_{val}" for val in label_mapping.values()]))
+                                target_names=[f"intent_{val}" for val in label_mapping.values()]))
     print(f"Accuracy: {accuracy_score(true_labels, predicted_labels):.2f}")
 
     # Save the DataFrame with predictions to a new CSV file

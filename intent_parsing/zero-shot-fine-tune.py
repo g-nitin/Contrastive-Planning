@@ -149,7 +149,7 @@ def main():
 
     # Generate and print the classification report
     report = classification_report(labels, predictions, 
-        target_names=['intent 1', 'intent 2', 'intent 3'])
+                                   target_names=['intent 1', 'intent 2', 'intent 3'])
     print("\nClassification Report for Fine-tuned Model on Evaluation Set:")
     print(report)
 

@@ -19,7 +19,7 @@ echo $CONDA_DEFAULT_ENV
 hostname
 python3 zero-shot-fine-tune-test.py \
     'data/sokoban_final_lifted_dataset.csv' \
-    'saved_models/lifted_saved_model_20240607_143534'
+    'saved_models/grounded_saved_model_20240606_230822'
 
 #Exit the conda system
 conda deactivate
