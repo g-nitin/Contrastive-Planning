@@ -1,10 +1,6 @@
 import argparse
 import wandb
 
-from os import environ
-from utils import get_best_available_device
-from datetime import datetime
-
 from pandas import read_csv
 from numpy import argmax
 from datasets import Dataset, DatasetDict
@@ -12,6 +8,11 @@ from sklearn.metrics import (
     accuracy_score, precision_recall_fscore_support, classification_report)
 from transformers import (
     BartForSequenceClassification, BartTokenizer, Trainer, TrainingArguments)
+
+from datetime import datetime
+from os import environ
+
+from code.utilities.utils import get_best_available_device
 
 """
 This script demonstrates how to fine-tune a pre-trained model on a dataset.

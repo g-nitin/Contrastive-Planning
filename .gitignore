@@ -1,12 +1,7 @@
-AI-Planning-Ontology/
-apache-jena-fuseki-5.0.0/
-MJF/
-papers/
-rdflib/
-tests/
 .idea/
 .DS_Store
-intent_parsing/wandb/
-intent_parsing/__pycache__/
-intent_parsing/saved_models/
+code/intent_parsing/wandb/
+code/intent_parsing/__pycache__/
+code/intent_parsing/saved_models/
+code/intent_parsing/results/
 sclurm_outs/
