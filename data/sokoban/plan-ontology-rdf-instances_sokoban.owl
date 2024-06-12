@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:planning-ontology="https://purl.org/ai4s/ontology/planning#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasPrecondition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://caressesrobot.org/ontology#Action"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:comment>a property that relates an action to an action precondition that is required for it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasEffect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://caressesrobot.org/ontology#Action"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:comment>a property that relates an action to an action effect that results from it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#blocksworld">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:label>blocksworld</rdfs:label>
+    <planning-ontology:hasRequirement rdf:resource="https://purl.org/ai4s/ontology/planning#:strips"/>
+    <planning-ontology:hasType rdf:resource="https://purl.org/ai4s/ontology/planning#block"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_1"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_2"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_3"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_4"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_5"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#pick-up"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#put-down"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#stack"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#unstack"/>
+    <planning-ontology:hasProblem rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1"/>
+    <planning-ontology:hasProblem rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#solvedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://purl.org/ai4s/ontology/planning#solvesRequirement"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#DomainRequirement"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#Planner"/>
+    <rdfs:comment>a property that relates a domain requirement to a planner that solves it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#?x">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionParameter"/>
+    <rdfs:label>?x</rdfs:label>
+    <planning-ontology:ofType rdf:resource="https://purl.org/ai4s/ontology/planning#block"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(on b2 b1)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasLowRelevancePlanner">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#Planner"/>
+    <rdfs:comment>a property that relates a planning domain to a planner that has a low relevance score for it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>movedown</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?sokoban"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#movedown_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#movedown_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#movedown_precondition_3"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#movedown_precondition_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#movedown_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#movedown_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#movedown_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#movedown_effect_4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_effect_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(crate ?crate)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?sokoban ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(on b1 b2)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>pushdown</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?sokoban"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?z"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?crate"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_precondition_3"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_precondition_4"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_precondition_5"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_precondition_6"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_precondition_7"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_5"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_6"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(holding ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>pushleft</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?sokoban"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?z"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?crate"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_precondition_3"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_precondition_4"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_precondition_5"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_precondition_6"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_precondition_7"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_precondition_8"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_5"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_6"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?sokoban ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_precondition_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?crate ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pick-up_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne1814a17f786423fa444af6f3144847f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#deletesPredicate"/>
+    <owl:someValuesFrom rdf:resource="http://purl.org/vocab/lifecycle/schema#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N94e94c41fe0245a88df90d2da8df90ba">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasInitialState"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?sokoban ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_precondition_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasParameterType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#ParameterType"/>
+    <rdfs:comment>a property that relates a planning domain to a type</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#DomainConstant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">represents a fixed entity in a planning domain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#sokoban_predicate_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(at ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#?crate">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionParameter"/>
+    <rdfs:label>?crate</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?sokoban ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(sokoban ?sokoban)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasPlanExplanation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>pushright</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?sokoban"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?z"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?crate"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_precondition_3"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_precondition_4"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_precondition_5"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_precondition_6"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_precondition_7"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_5"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_6"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_precondition_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?z)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_effect_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?crate ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#Authors">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc6d944e2d3644a1a980471058964344e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasPlanCost"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasPlan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningProblem"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    <rdfs:comment>a property that relates a planning problem to a plan that solves it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningProblem"/>
+    <rdfs:label>problem-4-1</rdfs:label>
+    <planning-ontology:hasObject rdf:resource="https://purl.org/ai4s/ontology/planning#b1"/>
+    <planning-ontology:hasObject rdf:resource="https://purl.org/ai4s/ontology/planning#b2"/>
+    <planning-ontology:hasObject rdf:resource="https://purl.org/ai4s/ontology/planning#b3"/>
+    <planning-ontology:hasObject rdf:resource="https://purl.org/ai4s/ontology/planning#b4"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_1"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_2"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_3"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_4"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_5"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_6"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_7"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_1"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_2"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_3"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_4"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#deletesPredicate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/lifecycle/schema#State"/>
+    <rdfs:comment>a property that relates an effect to a state that deletes a predicate from it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#sokoban">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:label>sokoban</rdfs:label>
+    <planning-ontology:hasRequirement rdf:resource="https://purl.org/ai4s/ontology/planning#:strips"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#sokoban_predicate_1"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#sokoban_predicate_2"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#sokoban_predicate_3"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#sokoban_predicate_4"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#sokoban_predicate_5"/>
+    <planning-ontology:hasPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#sokoban_predicate_6"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#moveright"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#moveup"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#movedown"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#pushright"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#pushup"/>
+    <planning-ontology:hasAction rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasPDDLTypeInstance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#ParameterType"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#ProblemObject"/>
+    <rdfs:comment>a property that relates a type to a problem object that is an instance of it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningProblem"/>
+    <rdfs:label>problem-3-1</rdfs:label>
+    <planning-ontology:hasObject rdf:resource="https://purl.org/ai4s/ontology/planning#b1"/>
+    <planning-ontology:hasObject rdf:resource="https://purl.org/ai4s/ontology/planning#b2"/>
+    <planning-ontology:hasObject rdf:resource="https://purl.org/ai4s/ontology/planning#b3"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_1"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_2"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_3"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_4"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_5"/>
+    <planning-ontology:hasInitialState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_6"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_1"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_2"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_3"/>
+    <planning-ontology:hasGoalState rdf:resource="https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#sokoban_predicate_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?crate ?z)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#addsPredicate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:range rdf:resource="http://purl.org/vocab/lifecycle/schema#State"/>
+    <rdfs:comment>a property that relates an effect to a state that adds a predicate to it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(below ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasProblem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningProblem"/>
+    <rdfs:comment>a property that relates a planning domain to a planning problem that is defined in it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_effect_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?crate ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#ActionEffect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N8b295e2cf0a54bc583922b3c887950ac"/>
+    <rdfs:subClassOf rdf:nodeID="Ne1814a17f786423fa444af6f3144847f"/>
+    <rdfs:comment xml:lang="en">a class that represents what happens after an action is done</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pick-up">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>pick-up</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pick-up_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pick-up_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pick-up_precondition_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pick-up_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pick-up_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pick-up_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pick-up_effect_4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#Planner">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N7e5a2d1d31284859bb137550269e4562"/>
+    <rdfs:subClassOf rdf:nodeID="Nb178f483750f4e94a359943f6ee2c720"/>
+    <rdfs:comment xml:lang="en">a system that can generate plans for a given planning domain and problem</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ebc4daf4c5b4e41a332cbd9f7295b43">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasObject"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#ProblemObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(clear b3)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasHighRelevancePlanner">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#Planner"/>
+    <rdfs:comment>a property that relates a planning domain to a planner that has a high relevance score for it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_effect_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(on ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#put-down">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>put-down</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#put-down_precondition_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#put-down_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#put-down_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#put-down_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#put-down_effect_4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup_precondition_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?sokoban ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>pushup</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?sokoban"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?z"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?crate"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_precondition_3"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_precondition_4"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_precondition_5"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_precondition_6"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_precondition_7"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_5"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_6"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasPredicate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:comment>a property that relates a planning domain to a domain predicate that is defined in it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#b4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ProblemObject"/>
+    <rdfs:label>b4</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N06f347b26e964b92a7cc6fe211c3994f"/>
+    <rdfs:subClassOf rdf:nodeID="Nc6d944e2d3644a1a980471058964344e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(below ?y ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasMediumRelevancePlanner">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#Planner"/>
+    <rdfs:comment>a property that relates a planning domain to a planner that has a medium relevance score for it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#ofPlannerType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#Planner"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#PlannerType"/>
+    <rdfs:comment>a property that relates a planner to a planner type that categorizes it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#b3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ProblemObject"/>
+    <rdfs:label>b3</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(crate ?crate)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasGoalState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningProblem"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:comment>a property that relates a planning problem to a goal state that is desired for it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>stack</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#stack_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#stack_precondition_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#stack_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#stack_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#stack_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#stack_effect_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#stack_effect_5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_effect_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N18620ab56d654fcdb71ef5a0c78f0bc2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasPredicate"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(leftOf ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(clear b1)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?sokoban ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_precondition_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(sokoban ?sokoban)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#put-down_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(ontable ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_precondition_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(below ?y ?z)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasExtractedAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#MacroAction"/>
+    <rdfs:comment>a property that relates a planning domain to an action that is extracted from its plan</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7b5b3f46be7d4ee8a335971657c8e1dc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasGoalState"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>moveup</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?sokoban"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveup_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveup_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveup_precondition_3"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveup_precondition_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveup_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveup_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveup_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveup_effect_4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N14e4488a283d469598fc3d2498afc935">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasAction"/>
+    <owl:someValuesFrom rdf:resource="http://caressesrobot.org/ontology#Action"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasActionExplanation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://caressesrobot.org/ontology#Action"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb178f483750f4e94a359943f6ee2c720">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#solvesRequirement"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#DomainRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#put-down_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(holding ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#put-down_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(handempty)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(below ?y ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>moveleft</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?sokoban"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft_precondition_3"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft_precondition_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveleft_effect_4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(handempty)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(holding ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(holding ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#sokoban_predicate_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?sokoban ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://caressesrobot.org/ontology#Action"/>
+    <rdfs:range rdf:resource="http://caressesrobot.org/ontology#Parameter"/>
+    <rdfs:comment>a property that relates an action to an action parameter that is involved in it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://purl.org/ai4s/ontology/planning/v2.0"/>
+    <dcterms:contributor>Bharath Muppasani, Vishal Pallagani, Biplav Srivastava, Raghava Mutharaju</dcterms:contributor>
+    <dcterms:creator>Bharath Muppasani</dcterms:creator>
+    <dcterms:description>This ontology represents the knowledge about automated planning domain. It captures the characteristics, features, and performance of different planners and domains, as well as the relationships between them. The ontology can be used to select suitable planners for a given domain and to improve their performance. The ontology aims to facilitate automated planning research and applications.</dcterms:description>
+    <dcterms:language>English</dcterms:language>
+    <dcterms:license>https://creativecommons.org/licenses/by/4.0/legalcode</dcterms:license>
+    <dcterms:title>Ontology to model Automated Planning domain</dcterms:title>
+    <rdfs:seeAlso>https://github.com/BharathMuppasani/AI-Planning-Ontology</rdfs:seeAlso>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0db6260220864177b5a3c9f2a2b5d2e7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasPlan"/>
+    <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#solvesRequirement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#Planner"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#DomainRequirement"/>
+    <rdfs:comment xml:lang="en">a property that relates a planner to a domain requirement that it can handle or satisfy</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#?z">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionParameter"/>
+    <rdfs:label>?z</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#PlannerType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">a category or classification of planners based on their characteristics or features</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(ontable b1)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>unstack</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#unstack_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#unstack_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#unstack_precondition_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#unstack_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#unstack_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#unstack_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#unstack_effect_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#unstack_effect_5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#ActionPrecondition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">a class that represents what needs to be true before an action can be done</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#PlanningDomain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N14e4488a283d469598fc3d2498afc935"/>
+    <rdfs:subClassOf rdf:nodeID="N18620ab56d654fcdb71ef5a0c78f0bc2"/>
+    <rdfs:subClassOf rdf:nodeID="Nf188f9ff5029463095bc9dc899bd7249"/>
+    <rdfs:comment xml:lang="en">a class that represents a problem setting for automated planning</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_effect_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?crate ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#block">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#Type"/>
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#type"/>
+    <rdfs:label>block</rdfs:label>
+    <planning-ontology:hasTypeInstance rdf:resource="https://purl.org/ai4s/ontology/planning#b1"/>
+    <planning-ontology:hasTypeInstance rdf:resource="https://purl.org/ai4s/ontology/planning#b2"/>
+    <planning-ontology:hasTypeInstance rdf:resource="https://purl.org/ai4s/ontology/planning#b3"/>
+    <planning-ontology:hasTypeInstance rdf:resource="https://purl.org/ai4s/ontology/planning#b4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (holding ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_precondition_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(destination for block)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?sokoban ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#b1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ProblemObject"/>
+    <rdfs:label>b1</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningProblem"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#ProblemObject"/>
+    <rdfs:comment>a property that relates a planning problem to a problem object that is involved in it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasModelReconciliationExplanation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#DomainRequirement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A feature that a planning domain requires or supports</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#ProblemObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">represents an entity or a constant that is involved in a planning problem</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pick-up_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (ontable ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown_precondition_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#put-down_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (holding ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_effect_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?crate ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(on b4 b3)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?sokoban ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasInitialState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningProblem"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:comment>a property that relates a planning problem to an initial state that is given for it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="http://caressesrobot.org/ontology#Action"/>
+    <rdfs:comment>a property that relates a planning domain to a domain action that is available in it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/lifecycle/schema#State">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">represents a situation or a configuration of the world in a planning problem</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_precondition_8">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?z)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N06f347b26e964b92a7cc6fe211c3994f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#isGeneratedBy"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#Planner"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasConstant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#DomainConstant"/>
+    <rdfs:comment>a property that relates a planning domain to a domain constant that is defined in it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#ParameterType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">represents a kind of entity in a planning domain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack_effect_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(on ?x ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(ontable b3)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainAction"/>
+    <rdfs:label>moveright</rdfs:label>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?sokoban"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?x"/>
+    <planning-ontology:hasParameter rdf:resource="https://purl.org/ai4s/ontology/planning#?y"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveright_precondition_1"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveright_precondition_2"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveright_precondition_3"/>
+    <planning-ontology:hasPrecondition rdf:resource="https://purl.org/ai4s/ontology/planning#moveright_precondition_4"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveright_effect_1"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveright_effect_2"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveright_effect_3"/>
+    <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#moveright_effect_4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#sokoban_predicate_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(crate ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?sokoban ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(handempty)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#MacroAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://caressesrobot.org/ontology#Action"/>
+    <rdfs:comment xml:lang="en">Extracted macro action, which is a combination of multiple actions of a planning domain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?crate ?z)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasRequirement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#PlanningDomain"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#DomainRequirement"/>
+    <rdfs:comment>a property that relates a planning domain or problem to a domain requirement that is required or supported by it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_precondition_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(leftOf ?z ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(leftOf ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(below ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_precondition_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(below ?z ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(ontable b2)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_precondition_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?sokoban ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://caressesrobot.org/ontology#Parameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">a class that represents what is involved in an action</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_precondition_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#?y">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionParameter"/>
+    <rdfs:label>?y</rdfs:label>
+    <planning-ontology:ofType rdf:resource="https://purl.org/ai4s/ontology/planning#block"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(sokoban ?sokoban)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?sokoban ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#sokoban_predicate_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(below ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#sokoban_predicate_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(leftOf ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(leftOf ?y ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_effect_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?z))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_effect_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?z))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/contributor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?crate ?z)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#InitialState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/lifecycle/schema#State"/>
+    <rdfs:comment xml:lang="en">represents the starting or the given state of a planning problem</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(sokoban ?sokoban)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#PlanningProblem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N7b5b3f46be7d4ee8a335971657c8e1dc"/>
+    <rdfs:subClassOf rdf:nodeID="N94e94c41fe0245a88df90d2da8df90ba"/>
+    <rdfs:subClassOf rdf:nodeID="N8ebc4daf4c5b4e41a332cbd9f7295b43"/>
+    <rdfs:subClassOf rdf:nodeID="N0db6260220864177b5a3c9f2a2b5d2e7"/>
+    <rdfs:comment xml:lang="en">represents a task of the planning domain that requires a plan to be solved</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_effect_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?z))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pick-up_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (handempty))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?sokoban ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(sokoban ?sokoban)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup_effect_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?sokoban ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(on b3 b4)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(on b2 b3)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(leftOf ?y ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#GoalState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/lifecycle/schema#State"/>
+    <rdfs:comment xml:lang="en">represents a desired or a target state defined in a task that a plan should achieve</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?sokoban ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasTag">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://purl.org/ai4s/ontology/planning#ParameterType"/>
+    <rdfs:comment>a property that relates a type to a type tag that labels it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_effect_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(crate ?crate)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_precondition_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(leftOf ?y ?z)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#put-down_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushleft_precondition_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(sokoban ?sokoban)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(ontable b2)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(clear b1)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf188f9ff5029463095bc9dc899bd7249">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasRequirement"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#DomainRequirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?sokoban ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N777ce79b03ea4d798bfb5d30711e96da">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#hasEffect"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack_effect_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (on ?x ?y))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(handempty)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_goal_state_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(on b3 b2)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7e5a2d1d31284859bb137550269e4562">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#ofPlannerType"/>
+    <owl:someValuesFrom rdf:resource="https://purl.org/ai4s/ontology/planning#PlannerType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pick-up_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(handempty)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_effect_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (clear ?z))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (handempty))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8b295e2cf0a54bc583922b3c887950ac">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://purl.org/ai4s/ontology/planning#addsPredicate"/>
+    <owl:someValuesFrom rdf:resource="http://purl.org/vocab/lifecycle/schema#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(clear b2)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#ofParameterType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://caressesrobot.org/ontology#Parameter"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#ParameterType"/>
+    <rdfs:comment>a property that relates an action parameter to a type that classifies it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pick-up_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(holding ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#isGeneratedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    <rdfs:range rdf:resource="https://purl.org/ai4s/ontology/planning#Planner"/>
+    <rdfs:comment>a property that relates a plan to a planner that generates it</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasPlanCost">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#unstack_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?y)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(ontable b1)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack_effect_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(clear ?x)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pick-up_precondition_3">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(handempty)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_effect_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(not (at ?sokoban ?x))</rdfs:label>
+    <planning-ontology:deletesPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_precondition_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?crate ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(on b1 b4)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_effect_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
+    <rdfs:label>(at ?crate ?z)</rdfs:label>
+    <planning-ontology:addsPredicate rdf:resource="https://purl.org/ai4s/ontology/planning#State"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#?sokoban">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionParameter"/>
+    <rdfs:label>?sokoban</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(on b3 b1)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_goal_state_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#GoalState"/>
+    <rdfs:label>(ontable b4)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveleft_precondition_4">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#movedown_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(sokoban ?sokoban)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveup_precondition_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(sokoban ?sokoban)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_5">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(clear b2)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#DomainPredicate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">a class that represents a condition or a fact that can be true or false in a planning domain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_precondition_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?crate ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(on ?x ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushright_precondition_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?z)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://caressesrobot.org/ontology#Action">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N777ce79b03ea4d798bfb5d30711e96da"/>
+    <rdfs:comment xml:lang="en">a class that represents a type of action that can be performed in a planning domain</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(crate ?crate)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_precondition_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(at ?crate ?y)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#blocksworld_predicate_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainPredicate"/>
+    <rdfs:label>(ontable ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-4-1_initial_state_1">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(handempty)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushdown_precondition_7">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(clear ?z)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#b2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ProblemObject"/>
+    <rdfs:label>b2</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#:strips">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#DomainRequirement"/>
+    <rdfs:label>:strips</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pick-up_precondition_2">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
+    <rdfs:label>(ontable ?x)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#problem-3-1_initial_state_6">
+    <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#InitialState"/>
+    <rdfs:label>(clear b3)</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

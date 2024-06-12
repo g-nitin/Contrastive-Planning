@@ -14,6 +14,7 @@ Since the project focuses, primarily, on the Sokoban domain, the `sokoban` folde
 The `sokoban` folder contains the following files:
 - `sokoban_final_grounded_dataset.csv` contains grounded examples for the Sokoban domain.
 - `sokoban_final_lifted_dataset.csv` contains lifted examples for the same domain.
+- `plan-ontology-rdf-instances_sokoban.owl` contains the ontology for the Sokoban domain. It was created using [AI-Planning-Ontology](https://github.com/BharathMuppasani/AI-Planning-Ontology) and the [Sokoban domain file](https://github.com/binleyyang/Sokoban/blob/master/sokoban.pddl).
 
 The subdirectory `extra` contains extra datasets. All the csv files have been generated using the `data_generation.ipynb` file in that directory. More specifically,
 - `lifted_dataset.csv` contains the lifted versions of the examples.

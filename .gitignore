@@ -1,7 +1,9 @@
 .idea/
 .DS_Store
-code/intent_parsing/wandb/
+code/templates/__pycache__/
 code/intent_parsing/__pycache__/
+code/__pycache__/
+code/intent_parsing/wandb/
 code/intent_parsing/saved_models/
 code/intent_parsing/results/
 sclurm_outs/
