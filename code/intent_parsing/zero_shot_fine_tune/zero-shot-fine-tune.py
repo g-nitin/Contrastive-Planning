@@ -12,7 +12,7 @@ from transformers import (
 from datetime import datetime
 from os import environ
 
-from code.utilities.utils import get_best_available_device
+from code.templates.utils import get_best_available_device
 
 """
 This script demonstrates how to fine-tune a pre-trained model on a dataset.
