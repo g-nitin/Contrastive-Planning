@@ -6,4 +6,5 @@ code/__pycache__/
 code/intent_parsing/wandb/
 code/intent_parsing/saved_models/
 code/intent_parsing/results/
-sclurm_outs/
+code/intent_parsing/sclurm_outs/
+models/
