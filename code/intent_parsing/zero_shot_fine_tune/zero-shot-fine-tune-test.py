@@ -35,7 +35,16 @@ def entire_dataset(df, label_mapping, classify_query, save_path=None):
     """Test the fine-tuned model on a dataset."""
 
     queries = df['text'].tolist()
-    true_labels = df['intent'].tolist()
+
+    # Test if the dataset has `intent` columns or `label` columns.
+    if 'intent' in df.columns:
+        true_labels = df['intent'].tolist()
+    else:
+        true_labels = df['label'].replace(
+            to_replace=[1, 2, 3], 
+            value=['Why is action A not used in the plan?', 
+                   'Why is action A used in state S, rather than action B?',
+                   'Why is action A used in the plan?']).tolist()
 
     # Classify all queries
     predicted_labels = [classify_query(query) for query in queries]
@@ -66,15 +75,23 @@ if __name__ == "__main__":
 
     print(f"Reading dataset from {dataset_path}")
     print(f"Reading model from {saved_dir}")
+    print()
 
     device = get_best_available_device()
     print(f"---Using device: {device}")
 
     df = read_csv(dataset_path)
 
-    # Encode the labels to numerical values
-    label_mapping = {label: idx for idx, label in
-                     enumerate(df['intent'].unique())}
+    if 'intent' in df.columns:
+        # Encode the labels to numerical values
+        label_mapping = {label: idx for idx, label in
+                        enumerate(df['intent'].unique())}
+    else:
+        label_mapping = {
+            'Why is action A not used in the plan?': 1,
+            'Why is action A used in state S, rather than action B?': 2,
+            'Why is action A used in the plan?': 3
+        }
     pprint(label_mapping)
 
     base_model_name = "facebook/bart-large-mnli"
