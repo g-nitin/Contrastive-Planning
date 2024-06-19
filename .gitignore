@@ -8,3 +8,4 @@ code/intent_parsing/saved_models/
 code/intent_parsing/results/
 code/intent_parsing/sclurm_outs/
 models/
+.env

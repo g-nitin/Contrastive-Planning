@@ -133,3 +133,7 @@ def extract_grounded_objects(query: str, actions_dict: dict[str, int]) -> List[s
 
     # Extract and return the complete matches
     return [match.group(0) for match in matches]
+
+
+def format_query_result(query_output: List[query.ResultRow]) -> List[str]:
+    return [str(lit[0])[1:-1] for lit in query_output]
