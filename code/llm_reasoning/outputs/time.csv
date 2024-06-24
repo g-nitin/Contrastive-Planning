@@ -1,0 +1,10 @@
+Model,Question,Time
+Gemini 1.5 Flash,Question 1,1.2158660888671875
+Gemini 1.5 Flash,Question 2,0.9720227718353271
+Gemini 1.5 Flash,Question 3,1.186615228652954
+Mistral 8x22b,Question 1,2.8935279846191406
+Mistral 8x22b,Question 2,1.908111810684204
+Mistral 8x22b,Question 3,2.7842068672180176
+Gemma 1.1 7b,Question 1,0.33206820487976074
+Gemma 1.1 7b,Question 2,0.11365818977355957
+Gemma 1.1 7b,Question 3,0.13346195220947266
