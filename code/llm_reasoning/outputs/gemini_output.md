@@ -100,7 +100,7 @@
 
 <details><summary>Response</summary>
 
-	The action `moveup sokoban l15 l11` is used to move the Sokoban from its current location (l15) to a position (l11) that allows for further manipulation of the crate. This move is necessary to get the Sokoban into a position where it can push the crate upwards towards the goal location.
+	The action `moveup sokoban l15 l11` is used to move the Sokoban from location `l15` to location `l11`. This is necessary because the Sokoban needs to be positioned at `l11` to execute the subsequent actions of `moveleft sokoban l11 l10` and `moveleft sokoban l10 l9`. These actions are crucial for moving the Sokoban into a position where it can push the crate up to its goal location at `l2`.
 
 </details>
 
@@ -204,7 +204,7 @@
 
 <details><summary>Response</summary>
 
-	The action `pushdown sokoban l18 l14 l10 crate2` is not used because the crate is already at `l14`, and the goal is to move it to `l2`. Pushing down the crate would move it away from the goal, making it less efficient.
+	The action `pushdown sokoban l18 l14 l10 crate2` is not used because the Sokoban is not at position `l18` in the third last step of the solution.  The solution has the Sokoban at position `l14` at that point, making the precondition `(at sokoban l18)` false.
 
 </details>
 
@@ -323,7 +323,7 @@
 
 <details><summary>Response</summary>
 
-	The action `pushup sokoban l10 l6 l2 crate2` is used because the Sokoban is currently at location `l10`, as per the previous steps in the solution. The action `pushdown sokoban l12 l6 l2 crate2` requires the Sokoban to be at `l12`, which is not the case at this point.
+	The action `pushup sokoban l10 l6 l2 crate2` is used because the Sokoban is currently at location `l10`, and the crate is at location `l6`. The action `pushdown sokoban l12 l6 l2 crate2` requires the Sokoban to be at location `l12`, which is not the case in the current state.
 
 </details>
 

@@ -142,9 +142,11 @@ def plot_time():
                     },
                     title="Time Taken by Each LLM", )
 
-    time_output_file: str = "plots/time_llm.html"
-    fig.write_html(time_output_file)
-    print(f"\nTime taken by each LLM is plotted in {time_output_file}")
+    time_output_file: str = "plots/time_llm"
+    fig.write_html(f"{time_output_file}.html")
+    fig.write_image(f"{time_output_file}.png")
+
+    print(f"\nTime taken by each LLM is plotted in ./{time_output_file.split('/')[0]}")
 
 
 def main():
