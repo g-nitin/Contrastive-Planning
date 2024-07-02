@@ -123,6 +123,109 @@ def _double_ques_prompt(problem, solution, question, action_1, preconditions_1, 
     """
 
 
+def get_problem() -> str:
+    return """
+        (define (problem sokoban)
+            (:domain sokoban)
+            (:objects sokoban crate1 crate2 l1 l10 l11 l12 l17 l18 l19 l22 l23 l24 l29 l30 l31 l32 l33 l36 l37 l38 l39 l40)
+            (:init (sokoban sokoban)
+                (crate crate1)
+                (crate crate2)
+                (leftOf l10 l11)
+                (leftOf l11 l12)
+                (leftOf l17 l18)
+                (leftOf l18 l19)
+                (leftOf l22 l23)
+                (leftOf l23 l24)
+                (leftOf l29 l30)
+                (leftOf l30 l31)
+                (leftOf l31 l32)
+                (leftOf l32 l33)
+                (leftOf l36 l37)
+                (leftOf l37 l38)
+                (leftOf l38 l39)
+                (leftOf l39 l40)
+                (below l17 l10)
+                (below l18 l11)
+                (below l19 l12)
+                (below l24 l17)
+                (below l29 l22)
+                (below l30 l23)
+                (below l31 l24)
+                (below l36 l29)
+                (below l37 l30)
+                (below l38 l31)
+                (below l39 l32)
+                (below l40 l33)
+                (at sokoban l19)
+                (at crate1 l17)
+                (at crate2 l18)
+                (clear l1)
+                (clear l10)
+                (clear l11)
+                (clear l12)
+                (clear l22)
+                (clear l23)
+                (clear l24)
+                (clear l29)
+                (clear l30)
+                (clear l31)
+                (clear l32)
+                (clear l33)
+                (clear l36)
+                (clear l37)
+                (clear l38)
+                (clear l39)
+                (clear l40)
+            )
+            (:goal (and
+                (or (at crate1 l37) (at crate2 l37) )
+                (or (at crate1 l39) (at crate2 l39) )
+            ))
+        )
+        """
+
+
+def get_solution() -> str:
+    return """
+    (moveup sokoban l19 l12)
+    (moveleft sokoban l12 l11)
+    (moveleft sokoban l11 l10)
+    (pushdown sokoban l10 l17 l24 crate1)
+    (pushdown sokoban l17 l24 l31 crate1)
+    (moveleft sokoban l24 l23)
+    (movedown sokoban l23 l30)
+    (movedown sokoban l30 l37)
+    (moveright sokoban l37 l38)
+    (moveright sokoban l38 l39)
+    (moveup sokoban l39 l32)
+    (pushleft sokoban l32 l31 l30 crate1)
+    (moveup sokoban l31 l24)
+    (moveup sokoban l24 l17)
+    (moveup sokoban l17 l10)
+    (moveright sokoban l10 l11)
+    (moveright sokoban l11 l12)
+    (movedown sokoban l12 l19)
+    (pushleft sokoban l19 l18 l17 crate2)
+    (moveup sokoban l18 l11)
+    (moveleft sokoban l11 l10)
+    (pushdown sokoban l10 l17 l24 crate2)
+    (pushdown sokoban l17 l24 l31 crate2)
+    (pushdown sokoban l24 l31 l38 crate2)
+    (moveup sokoban l31 l24)
+    (moveleft sokoban l24 l23)
+    (moveleft sokoban l23 l22)
+    (movedown sokoban l22 l29)
+    (movedown sokoban l29 l36)
+    (moveright sokoban l36 l37)
+    (pushright sokoban l37 l38 l39 crate2)
+    (moveup sokoban l38 l31)
+    (moveup sokoban l31 l24)
+    (moveleft sokoban l24 l23)
+    (pushdown sokoban l23 l30 l37 crate1)
+    """
+
+
 def prompt_1() -> str:
     """
     Generate a prompt for a Sokoban reasoning question.
@@ -130,70 +233,15 @@ def prompt_1() -> str:
     @return: A formatted prompt string.
     """
 
-    problem: str = """
-    (define (problem s1)
-        (:domain sokoban)
-        (:objects sokoban, crate2, l1, l2, l5, l6, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18)
-        (:init (sokoban sokoban) 
-               (crate crate2)
+    problem: str = get_problem()
+    solution: str = get_solution()
 
-               ;;horizontal relationships
-               (leftOf l1 l2) 
-               (leftOf l5 l6) 
-               (leftOf l9 l10) (leftOf l10 l11) (leftOf l11 l12) 
-               (leftOf l13 l14) (leftOf l14 l15) (leftOf l15 l16)
-               (leftOf l17 l18)
-
-               ;;vertical relationships
-               (below l5 l1) (below l6 l2)
-               (below l9 l5) (below l10 l6)
-               (below l13 l9) (below l14 l10) (below l15 l11) (below l16 l12)
-               (below l17 l13) (below l18 l14)
-
-               ;;initialize sokoban and crate
-               (at sokoban l10)
-               (at crate2 l15) 
-
-               ;;clear spaces
-               (clear l1) 
-               (clear l2) 
-               (clear l5) 
-               (clear l6) 
-               (clear l9)
-               (clear l11)
-               (clear l12) 
-               (clear l13) 
-               (clear l14)
-               (clear l16) 
-               (clear l17)   				
-               (clear l18))
-
-        (:goal (and (at crate2 l2)))
-    )
-    """
-
-    solution: str = """
-    ((moveright sokoban l10 l11)
-     (moveright sokoban l11 l12)
-     (movedown sokoban l12 l16)
-     (pushleft sokoban l16 l15 l14 crate2)
-     (moveup sokoban l15 l11)
-     (moveleft sokoban l11 l10)
-     (moveleft sokoban l10 l9)
-     (movedown sokoban l9 l13)
-     (movedown sokoban l13 l17)
-     (moveright sokoban l17 l18)
-     (pushup sokoban l18 l14 l10 crate2)
-     (pushup sokoban l14 l10 l6 crate2)
-     (pushup sokoban l10 l6 l2 crate2))
-    """
-
-    action: str = "moveup sokoban l15 l11"
+    action: str = "moveup sokoban l39 l32"
 
     # Additional information about the specific action mentioned in the question
     # From `code/sokoban_exploration/sokoban_explore.ipynb`
-    preconditions: list[str] = ['sokoban sokoban', 'at sokoban l15', 'below l15 l11', 'clear l11']
-    effects: list[str] = ['at sokoban l11', 'clear l15', 'not (at sokoban l15)', 'not (clear l11)']
+    preconditions: list[str] = ['sokoban sokoban', 'at sokoban l39', 'below l39 l32', 'clear l32']
+    effects: list[str] = ['at sokoban l32', 'clear l39', 'not (at sokoban l39)', 'not (clear l32)']
 
     question: str = f"Why is the action {action} used in the solution?"
 
@@ -207,74 +255,19 @@ def prompt_2() -> str:
     @return: A formatted prompt string.
     """
 
-    problem: str = """
-    (define (problem s1)
-        (:domain sokoban)
-        (:objects sokoban, crate2, l1, l2, l5, l6, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18)
-        (:init (sokoban sokoban) 
-               (crate crate2)
+    problem: str = get_problem()
+    solution: str = get_solution()
 
-               ;;horizontal relationships
-               (leftOf l1 l2) 
-               (leftOf l5 l6) 
-               (leftOf l9 l10) (leftOf l10 l11) (leftOf l11 l12) 
-               (leftOf l13 l14) (leftOf l14 l15) (leftOf l15 l16)
-               (leftOf l17 l18)
-
-               ;;vertical relationships
-               (below l5 l1) (below l6 l2)
-               (below l9 l5) (below l10 l6)
-               (below l13 l9) (below l14 l10) (below l15 l11) (below l16 l12)
-               (below l17 l13) (below l18 l14)
-
-               ;;initialize sokoban and crate
-               (at sokoban l10)
-               (at crate2 l15) 
-
-               ;;clear spaces
-               (clear l1) 
-               (clear l2) 
-               (clear l5) 
-               (clear l6) 
-               (clear l9)
-               (clear l11)
-               (clear l12) 
-               (clear l13) 
-               (clear l14)
-               (clear l16) 
-               (clear l17)   				
-               (clear l18))
-
-        (:goal (and (at crate2 l2)))
-    )
-    """
-
-    solution: str = """
-    ((moveright sokoban l10 l11)
-     (moveright sokoban l11 l12)
-     (movedown sokoban l12 l16)
-     (pushleft sokoban l16 l15 l14 crate2)
-     (moveup sokoban l15 l11)
-     (moveleft sokoban l11 l10)
-     (moveleft sokoban l10 l9)
-     (movedown sokoban l9 l13)
-     (movedown sokoban l13 l17)
-     (moveright sokoban l17 l18)
-     (pushup sokoban l18 l14 l10 crate2)
-     (pushup sokoban l14 l10 l6 crate2)
-     (pushup sokoban l10 l6 l2 crate2))
-    """
-
-    action: str = "pushdown sokoban l18 l14 l10 crate2"
+    action: str = "pushdown sokoban l23 l30 l37 crate1"
 
     # Additional information about the specific action mentioned in the question
     # From `code/sokoban_exploration/sokoban_explore.ipynb`
-    preconditions: list[str] = ['sokoban sokoban', 'crate crate2', 'below l14 l18',
-                                'below l10 l14', 'at sokoban l18', 'at crate2 l14', 'clear l10']
-    effects: list[str] = ['at sokoban l14', 'at crate2 l10', 'clear l18', 'not (at sokoban l18)',
-                          'not (at crate2 l14)', 'not (clear l14)', 'not (clear l10)']
+    preconditions: list[str] = ['sokoban sokoban', 'crate crate1', 'below l30 l23',
+                                'below l37 l30', 'at sokoban l23', 'at crate1 l30', 'clear l37']
+    effects: list[str] = ['at sokoban l30', 'at crate1 l37', 'clear l23', 'not (at sokoban l23)',
+                          'not (at crate1 l30)', 'not (clear l30)', 'not (clear l37)']
 
-    question: str = f"Why is the action {action} not used in the solution for the third last step?"
+    question: str = f"Why is the action {action} not used in the solution in the last step?"
 
     return _single_ques_prompt(problem, solution, question, action, preconditions, effects)
 
@@ -286,76 +279,20 @@ def prompt_3() -> str:
     @return: A formatted prompt string.
     """
 
-    problem: str = """
-    (define (problem s1)
-        (:domain sokoban)
-        (:objects sokoban, crate2, l1, l2, l5, l6, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18)
-        (:init (sokoban sokoban) 
-               (crate crate2)
+    problem: str = get_problem()
+    solution: str = get_solution()
 
-               ;;horizontal relationships
-               (leftOf l1 l2) 
-               (leftOf l5 l6) 
-               (leftOf l9 l10) (leftOf l10 l11) (leftOf l11 l12) 
-               (leftOf l13 l14) (leftOf l14 l15) (leftOf l15 l16)
-               (leftOf l17 l18)
+    action1: str = "pushdown sokoban l10 l17 l24 crate1"
+    preconditions_1: list[str] = ['sokoban sokoban', 'crate crate1', 'below l17 l10',
+                                  'below l24 l17', 'at sokoban l10', 'at crate l17', 'clear l24']
+    effects_1: list[str] = ['at sokoban l17', 'at crate1 l24', 'clear l10', 'not (at sokoban l10)',
+                            'not (at crate1 l17)', 'not (clear l17)', 'not (clear l24)']
 
-               ;;vertical relationships
-               (below l5 l1) (below l6 l2)
-               (below l9 l5) (below l10 l6)
-               (below l13 l9) (below l14 l10) (below l15 l11) (below l16 l12)
-               (below l17 l13) (below l18 l14)
-
-               ;;initialize sokoban and crate
-               (at sokoban l10)
-               (at crate2 l15) 
-
-               ;;clear spaces
-               (clear l1) 
-               (clear l2) 
-               (clear l5) 
-               (clear l6) 
-               (clear l9)
-               (clear l11)
-               (clear l12) 
-               (clear l13) 
-               (clear l14)
-               (clear l16) 
-               (clear l17)   				
-               (clear l18))
-
-        (:goal (and (at crate2 l2)))
-    )
-    """
-
-    solution: str = """
-    ((moveright sokoban l10 l11)
-     (moveright sokoban l11 l12)
-     (movedown sokoban l12 l16)
-     (pushleft sokoban l16 l15 l14 crate2)
-     (moveup sokoban l15 l11)
-     (moveleft sokoban l11 l10)
-     (moveleft sokoban l10 l9)
-     (movedown sokoban l9 l13)
-     (movedown sokoban l13 l17)
-     (moveright sokoban l17 l18)
-     (pushup sokoban l18 l14 l10 crate2)
-     (pushup sokoban l14 l10 l6 crate2)
-     (pushup sokoban l10 l6 l2 crate2))
-    """
-
-    action1: str = "pushup sokoban l10 l6 l2 crate2"
-    preconditions_1: list[str] = ['sokoban sokoban', 'crate crate2', 'below l10 l6', 'below l6 l2',
-                                  'at sokoban l10', 'at crate2 l6', 'clear l2']
-    effects_1: list[str] = ['at sokoban l6', 'at crate2 l2', 'clear l10',
-                            'not (at sokoban l10)', 'not (at crate2 l6)', 'not (clear l6)', 'not (clear l2)']
-
-    action2: str = "pushdown sokoban l12 l6 l2 crate2"
-    preconditions_2: list[str] = [
-        'sokoban sokoban', 'crate crate2', 'below l6 l12', 'below l2 l6', 'at sokoban l12', 'at crate l6', 'clear l2'
-    ]
-    effects_2: list[str] = ['at sokoban l6', 'at crate2 l2', 'clear l12', 'not (at sokoban l12)',
-                            'not (at crate2 l6)', 'not (clear l6)', 'not (clear l2)']
+    action2: str = "pushup sokoban l10 l17 l24 crate1"
+    preconditions_2: list[str] = ['sokoban sokoban', 'crate crate1', 'below l10 l17', 'below l17 l24',
+                                  'at sokoban l10', 'at crate1 l17', 'clear l24']
+    effects_2: list[str] = ['at sokoban l17', 'at crate1 l24', 'clear l10',
+                            'not (at sokoban l10)', 'not (at crate1 l17)', 'not (clear l17)', 'not (clear l24)']
 
     question: str = f"For the last step, why is the action {action1} used in the solution rather than action {action2}?"
 

@@ -9,3 +9,5 @@ code/intent_parsing/results/
 code/intent_parsing/sclurm_outs/
 models/
 .env
+code/viz/
+code/llm_reasoning/__pycache__/

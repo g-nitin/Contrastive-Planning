@@ -1,4 +1,4 @@
-from typing import Callable, Any
+from typing import Callable
 from time import time
 from os.path import exists
 from dotenv import load_dotenv
