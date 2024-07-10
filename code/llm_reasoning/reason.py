@@ -5,13 +5,10 @@ from dotenv import load_dotenv
 from os import getenv
 from pandas import read_csv
 from plotly.express import histogram
-from requests import post
 from pathlib import Path
 from sokoban_prompt import *
-
+from huggingface_hub import InferenceClient
 import google.generativeai as genai
-from mistralai.client import MistralClient
-from mistralai.models.chat_completion import ChatMessage
 
 
 def get_responses(model_name: str,
@@ -50,7 +47,8 @@ def get_responses(model_name: str,
         time_entry: str = f"{model_name},Question {i + 1},{time() - init_time}"
 
         # Add the response to the string
-        # write_str += f"## Prompt\n{prompt}\n\n## Response\n{response}\n\n"
+        response = response.replace("\n", "")
+        response = response.replace("#", "")
         write_str += (f"<details><summary>Response</summary>"
                       f"\n\n\t{response}\n\n</details>\n\n")
 
@@ -91,44 +89,31 @@ def gemini():
                   "outputs/gemini_output.md", "outputs/time.csv")
 
 
-def mistral():
-    client = MistralClient(api_key=getenv('MISTRAL_API_KEY'))
+def llama_3_8b():
+    client = InferenceClient(
+        "meta-llama/Meta-Llama-3-8B-Instruct",
+        token=getenv("HF_API_KEY"),
+    )
 
     def get_response(prompt: str) -> str:
         """
-        Get response from Mistral API given a prompt.
+        Get response from the HuggingFace serverless API given a prompt.
         @param prompt: The prompt to send to the API.
         @return: The response from the API.
         """
-        messages = [ChatMessage(role="user", content=prompt)]
+        return_str: str = ""
 
-        chat_response = client.chat(
-            model="open-mixtral-8x22b",
-            messages=messages,
-        )
-        return chat_response.choices[0].message.content
+        for message in client.chat_completion(
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=500,
+                stream=True,
+        ):
+            return_str += message.choices[0].delta.content
 
-    get_responses("Mistral 8x22b", [prompt_1(), prompt_2(), prompt_3()], get_response,
-                  "outputs/mistral_output.md", "outputs/time.csv")
+        return return_str
 
-
-def gemma():
-    API_URL: str = "https://api-inference.huggingface.co/models/google/gemma-1.1-7b-it"
-    headers: dict[str, str] = {"Authorization": f"Bearer {getenv('HF_API_KEY')}"}
-
-    # Query the model with the given payload
-    # @param payload: The payload to send to the model
-    # @return: The response from the model    
-    query: Callable[[dict], list[dict]] = lambda payload: post(API_URL, headers=headers, json=payload).json()
-
-    # Get the response from the model
-    # @param prompt: The prompt to send to the model
-    # @return: The response from the model
-    get_response: Callable[[str], str] = lambda prompt: \
-        query({"inputs": prompt})[0]['generated_text'].replace(prompt, '')
-
-    get_responses("Gemma 1.1 7b", [prompt_1(), prompt_2(), prompt_3()], get_response,
-                  "outputs/gemma_output.md", "outputs/time.csv")
+    get_responses("Meta Llama 3 8B", [prompt_1(), prompt_2(), prompt_3()], get_response,
+                  "outputs/llama_3_8b_output.md", "outputs/time.csv")
 
 
 def plot_time():
@@ -155,9 +140,14 @@ def main():
     Path("./outputs").mkdir(parents=True, exist_ok=True)
     Path("./plots").mkdir(parents=True, exist_ok=True)
 
+    # Remove the `time_output_path` if it exists
+    time_output_path: str = "outputs/time.csv"
+    if exists(time_output_path):
+        print("Removing the time output file...")
+        Path.unlink(Path(time_output_path))
+
     gemini()
-    mistral()
-    gemma()
+    llama_3_8b()
 
     plot_time()
 

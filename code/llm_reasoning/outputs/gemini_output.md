@@ -141,7 +141,7 @@
 
 <details><summary>Response</summary>
 
-	The action `moveup sokoban l39 l32` is used to move the sokoban from location `l39` to `l32`. This is necessary because the goal requires a crate to be at location `l39` and the sokoban is blocking that spot. By moving up, the sokoban clears the way for a crate to be pushed into that location.
+	The action `moveup sokoban l39 l32` is used to move the sokoban from location `l39` to `l32`. This is necessary because the goal state requires a crate to be at either `l37` or `l39`, and the sokoban needs to be at `l32` to push the crate to `l37` from its current location at `l39`.
 
 </details>
 
@@ -286,7 +286,7 @@
 
 <details><summary>Response</summary>
 
-	The action `pushdown sokoban l23 l30 l37 crate1` is not used because the preconditions are not met. Specifically, `at crate1 l30` is false.  The crate is already at `l37` in the previous step, making this action redundant.
+	The action `pushdown sokoban l23 l30 l37 crate1` is not used in the last step because the goal is already achieved. `crate1` is at `l37`, one of the goal locations, after the previous action.  The solution plan aims to reach the goal state in the fewest steps possible, so it stops after achieving the goal.
 
 </details>
 
@@ -446,7 +446,7 @@
 
 <details><summary>Response</summary>
 
-	The action `pushdown sokoban l10 l17 l24 crate1` is used because the goal requires crate1 to be at location l37, which is below l24. Pushing down crate1 ensures it moves in the correct direction to achieve the goal.
+	The action `pushdown sokoban l10 l17 l24 crate1` is used because the goal requires `crate1` to be at `l37`, which is below `l30`.  Pushing the crate down will move it in the correct direction towards the goal location, whereas pushing it up would move it further away.
 
 </details>
 
