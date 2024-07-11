@@ -1,17 +1,19 @@
-from typing import Callable
 from time import time
-from os.path import exists
+from typing import Callable
 from dotenv import load_dotenv
 from os import getenv
+import google.generativeai as genai
+from huggingface_hub import InferenceClient
 from pandas import read_csv
 from plotly.express import histogram
+
+from abc import ABC, abstractmethod
+from os.path import exists
 from pathlib import Path
 from sokoban_prompt import *
-from huggingface_hub import InferenceClient
-import google.generativeai as genai
 
 
-def get_responses(model_name: str,
+def _get_responses(model_name: str,
                   prompts: list[str],
                   get_response: Callable[[str], str],
                   llm_output_path: str,
@@ -70,53 +72,10 @@ def get_responses(model_name: str,
         f.write(write_str)
 
 
-def gemini():
-    genai.configure(api_key=getenv('GOOGLE_API_KEY'))
-
-    model = genai.GenerativeModel('gemini-1.5-flash')
-
-    # # Print the models
-    # for m in genai.list_models():
-    #     if 'generateContent' in m.supported_generation_methods:
-    #         print(m.name)
-
-    # Get response from the Gemini API given a prompt.
-    # @param prompt: The prompt to send to the API.
-    # @return: The response from the API.
-    get_response: Callable[[str], str] = lambda prompt: model.generate_content(prompt).text
-
-    get_responses("Gemini 1.5 Flash", [prompt_1(), prompt_2(), prompt_3()], get_response,
-                  "outputs/gemini_output.md", "outputs/time.csv")
-
-
-def llama_3_8b():
-    client = InferenceClient(
-        "meta-llama/Meta-Llama-3-8B-Instruct",
-        token=getenv("HF_API_KEY"),
-    )
-
-    def get_response(prompt: str) -> str:
-        """
-        Get response from the HuggingFace serverless API given a prompt.
-        @param prompt: The prompt to send to the API.
-        @return: The response from the API.
-        """
-        return_str: str = ""
-
-        for message in client.chat_completion(
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=500,
-                stream=True,
-        ):
-            return_str += message.choices[0].delta.content
-
-        return return_str
-
-    get_responses("Meta Llama 3 8B", [prompt_1(), prompt_2(), prompt_3()], get_response,
-                  "outputs/llama_3_8b_output.md", "outputs/time.csv")
-
-
 def plot_time():
+    """
+    Plot the time taken by each LLM.
+    """
     df = read_csv("outputs/time.csv")
 
     fig = histogram(df, x="Question", y="Time", color='Model', barmode='group',
@@ -134,6 +93,98 @@ def plot_time():
     print(f"\nTime taken by each LLM is plotted in ./{time_output_file.split('/')[0]}")
 
 
+class llm(ABC):
+    def __init__(self, name: str, token: str, output_path: str):
+        self.name: str = name
+        self.token: str = token
+        self.prompt: list[str] = [prompt_1(), prompt_2(), prompt_3()]
+        self.output_path: str = output_path
+        self.time_output_path: str = "outputs/time.csv"
+
+    @abstractmethod
+    def get_response(self, prompt: str) -> str:
+        pass
+
+
+class gemini_flash(llm):
+    def __init__(self):
+        super().__init__("Gemini 1.5 Flash", getenv('GOOGLE_API_KEY'), "outputs/gemini_output.md")
+
+    def get_response(self, prompt: str) -> str:
+        """
+        Get response from the Gemini API given a prompt.
+        @param prompt: The prompt to send to the API.
+        @return: The response from the API.
+        """
+        genai.configure(api_key=getenv('GOOGLE_API_KEY'))
+        model = genai.GenerativeModel('gemini-1.5-flash')
+
+        return model.generate_content(prompt).text
+
+    def get_responses(self):
+        _get_responses(self.name, self.prompt, self.get_response, self.output_path, self.time_output_path)
+
+
+class llama_3_8b(llm):
+    def __init__(self):
+        super().__init__("Meta Llama 3 8B", getenv("HF_API_KEY"), "outputs/mixtral_8x7b_output.md")
+
+    def get_response(self, prompt: str) -> str:
+        """
+        Get response from the HuggingFace serverless API given a prompt.
+        @param prompt: The prompt to send to the API.
+        @return: The response from the API.
+        """
+        client = InferenceClient(
+            "meta-llama/Meta-Llama-3-8B-Instruct",
+            token=getenv("HF_API_KEY"),
+        )
+
+        return_str: str = ""
+
+        for message in client.chat_completion(
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=500,
+                stream=True,
+        ):
+            return_str += message.choices[0].delta.content
+
+        return return_str
+
+    def get_responses(self):
+        _get_responses(self.name, self.prompt, self.get_response, self.output_path, self.time_output_path)
+
+
+class mixtral_8x7b(llm):
+    def __init__(self):
+        super().__init__("Mixtral-8x7B Instruct", getenv("HF_API_KEY"), "outputs/mixtral_8x7b_output.md")
+
+    def get_response(self, prompt: str) -> str:
+        """
+        Get response from the HuggingFace serverless API given a prompt.
+        @param prompt: The prompt to send to the API.
+        @return: The response from the API.
+        """
+        client = InferenceClient(
+            "mistralai/Mixtral-8x7B-Instruct-v0.1",
+            token=getenv("HF_API_KEY"),
+        )
+
+        return_str: str = ""
+
+        for message in client.chat_completion(
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=500,
+                stream=True,
+        ):
+            return_str += message.choices[0].delta.content
+
+        return return_str
+
+    def get_responses(self):
+        _get_responses(self.name, self.prompt, self.get_response, self.output_path, self.time_output_path)
+
+
 def main():
     load_dotenv()
 
@@ -146,8 +197,9 @@ def main():
         print("Removing the time output file...")
         Path.unlink(Path(time_output_path))
 
-    gemini()
-    llama_3_8b()
+    gemini_flash().get_responses()
+    llama_3_8b().get_responses()
+    mixtral_8x7b().get_responses()
 
     plot_time()
 
