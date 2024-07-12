@@ -1,10 +1,43 @@
 Model,Question,Time
-Gemini 1.5 Flash,Question 1,1.555983066558838
-Gemini 1.5 Flash,Question 2,1.181424856185913
-Gemini 1.5 Flash,Question 3,1.1712031364440918
-Meta Llama 3 8B,Question 1,0.5979678630828857
-Meta Llama 3 8B,Question 2,0.08266711235046387
-Meta Llama 3 8B,Question 3,0.05645275115966797
-Mixtral-8x7B Instruct,Question 1,0.07774686813354492
-Mixtral-8x7B Instruct,Question 2,0.06694912910461426
-Mixtral-8x7B Instruct,Question 3,0.06020498275756836
+Gemini 1.5 Flash,Prompt 1,1.2486329078674316
+Gemini 1.5 Flash,Prompt 2,1.3826758861541748
+Gemini 1.5 Flash,Prompt 3,1.5861389636993408
+Gemini 1.5 Flash,Prompt 4a,1.8391098976135254
+Gemini 1.5 Flash,Prompt 4b,1.5353288650512695
+Gemini 1.5 Flash,Prompt 4c,1.0236899852752686
+Gemini 1.5 Flash,Prompt 5,1.0225768089294434
+Gemini 1.5 Flash,Prompt 1 + ontology,2.5818607807159424
+Gemini 1.5 Flash,Prompt 2 + ontology,2.1269052028656006
+Gemini 1.5 Flash,Prompt 3 + ontology,1.2306110858917236
+Gemini 1.5 Flash,Prompt 4a + ontology,1.239650011062622
+Gemini 1.5 Flash,Prompt 4b + ontology,1.5225200653076172
+Gemini 1.5 Flash,Prompt 4c + ontology,1.2278661727905273
+Gemini 1.5 Flash,Prompt 5 + ontology,1.3316459655761719
+Meta Llama 3 8B,Prompt 1,0.32655906677246094
+Meta Llama 3 8B,Prompt 2,0.052680253982543945
+Meta Llama 3 8B,Prompt 3,0.06692910194396973
+Meta Llama 3 8B,Prompt 4a,0.060256004333496094
+Meta Llama 3 8B,Prompt 4b,0.047333717346191406
+Meta Llama 3 8B,Prompt 4c,0.05005598068237305
+Meta Llama 3 8B,Prompt 5,0.0524439811706543
+Meta Llama 3 8B,Prompt 1 + ontology,1.0721852779388428
+Meta Llama 3 8B,Prompt 2 + ontology,0.0568540096282959
+Meta Llama 3 8B,Prompt 3 + ontology,0.05883979797363281
+Meta Llama 3 8B,Prompt 4a + ontology,0.0479578971862793
+Meta Llama 3 8B,Prompt 4b + ontology,0.05514407157897949
+Meta Llama 3 8B,Prompt 4c + ontology,0.053405046463012695
+Meta Llama 3 8B,Prompt 5 + ontology,0.052060842514038086
+Mixtral-8x7B Instruct,Prompt 1,0.059944868087768555
+Mixtral-8x7B Instruct,Prompt 2,0.054036855697631836
+Mixtral-8x7B Instruct,Prompt 3,0.05667901039123535
+Mixtral-8x7B Instruct,Prompt 4a,0.05298209190368652
+Mixtral-8x7B Instruct,Prompt 4b,0.055689334869384766
+Mixtral-8x7B Instruct,Prompt 4c,0.06299281120300293
+Mixtral-8x7B Instruct,Prompt 5,0.05172085762023926
+Mixtral-8x7B Instruct,Prompt 1 + ontology,28.925086975097656
+Mixtral-8x7B Instruct,Prompt 2 + ontology,0.06486678123474121
+Mixtral-8x7B Instruct,Prompt 3 + ontology,0.055908918380737305
+Mixtral-8x7B Instruct,Prompt 4a + ontology,0.05271196365356445
+Mixtral-8x7B Instruct,Prompt 4b + ontology,0.05517387390136719
+Mixtral-8x7B Instruct,Prompt 4c + ontology,0.05542922019958496
+Mixtral-8x7B Instruct,Prompt 5 + ontology,0.04603695869445801
