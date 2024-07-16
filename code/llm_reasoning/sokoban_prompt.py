@@ -1,3 +1,31 @@
+def _prompt_basic(problem: str, solution: str, question: str) -> str:
+    return f"""
+    I have a Sokoban problem with the following initial and goal states expressed in PDDL:
+
+    **Initial and Goal States:**
+    ```
+    {problem}
+    ```
+
+    **Generated Solution Plan:**
+    ```
+    {solution}
+    ```
+
+    I need you to answer the following question concisely by reasoning through the provided information:
+
+    **Question:**
+    ```
+    {question}
+    ```
+    
+    Hints:
+        There are 8 actions for the Sokoban domain.
+        The actions with the format of `move* ?x ?y` are the action that move the Sokoban from location `?x` to `?y`.
+        The actions with the format of `push* ?x ?y ?z ?crate` are the action that push the Sokoban from `?x` to `?y` and `?crate` from location `?y` to `?z`.
+    """
+
+
 def _prompt_1_template(problem: str, solution: str, include_ontology: bool) -> str:
     """
     Helper function to generate a prompt for the first question.
@@ -6,22 +34,7 @@ def _prompt_1_template(problem: str, solution: str, include_ontology: bool) -> s
     @param include_ontology: Whether to include the ontology in the prompt.
     @return: A formatted prompt string.
     """
-    to_return = f"""
-    I have a Sokoban problem with the following initial and goal states expressed in PDDL:
-
-    **Initial and Goal States:**
-    ```{problem}```
-
-    **Generated Solution Plan:**
-    ```{solution}```
-
-    I need you to answer the following question logically & concisely:
-
-    **Question:**
-    ```
-    Is the plan, provided above, valid?
-    ```
-    """
+    to_return = _prompt_basic(problem, solution, "Is the plan, provided above, valid?")
 
     if include_ontology:
         to_return += f"""
@@ -131,26 +144,7 @@ def _single_ques_template(problem: str, solution: str, question: str, action: st
     @return: A formatted prompt string.
     """
 
-    to_return = f"""
-    I have a Sokoban problem with the following initial and goal states expressed in PDDL:
-
-    **Initial and Goal States:**
-    ```
-    {problem}
-    ```
-
-    **Generated Solution Plan:**
-    ```
-    {solution}
-    ```
-
-    I need you to answer the following question concisely by reasoning through the provided information:
-
-    **Question:**
-    ```
-    {question}
-    ```
-    """
+    to_return = _prompt_basic(problem, solution, question)
 
     if include_ontology:
         to_return += f"""
@@ -196,26 +190,7 @@ def _double_ques_template(problem: str, solution: str, question,
     @return: A formatted prompt string.
     """
 
-    to_return = f"""
-    I have a Sokoban problem with the following initial and goal states expressed in PDDL:
-
-    **Initial and Goal States:**
-    ```
-    {problem}
-    ```
-
-    **Generated Solution Plan:**
-    ```
-    {solution}
-    ```
-
-    I need you to answer the following question concisely by reasoning through the provided information:
-
-    **Question:**
-    ```
-    {question}
-    ```
-    """
+    to_return = _prompt_basic(problem, solution, question)
 
     if include_ontology:
         to_return += f"""
