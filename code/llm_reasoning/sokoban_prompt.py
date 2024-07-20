@@ -18,11 +18,6 @@ def _prompt_basic(problem: str, solution: str, question: str) -> str:
     ```
     {question}
     ```
-    
-    Hints:
-        There are 8 actions for the Sokoban domain.
-        The actions with the format of `move* ?x ?y` are the action that move the Sokoban from location `?x` to `?y`.
-        The actions with the format of `push* ?x ?y ?z ?crate` are the action that push the Sokoban from `?x` to `?y` and `?crate` from location `?y` to `?z`.
     """
 
 
@@ -43,89 +38,23 @@ def _prompt_1_template(problem: str, solution: str, include_ontology: bool) -> s
     **Action: (Precondition, Effect)**
     ```
     {{'movedown': (['sokoban ?sokoban', 'at ?sokoban ?x', 'below ?y ?x', 'clear ?y'],
-                  ['at ?sokoban ?y',
-                   'clear ?x',
-                   'not (at ?sokoban ?x)',
-                   'not (clear ?y)']),
-     'moveleft': (['sokoban ?sokoban',
-                   'at ?sokoban ?x',
-                   'leftOf ?y ?x',
-                   'clear ?y'],
-                  ['at ?sokoban ?y',
-                   'clear ?x',
-                   'not (at ?sokoban ?x)',
-                   'not (clear ?y)']),
-     'moveright': (['sokoban ?sokoban',
-                    'at ?sokoban ?x',
-                    'leftOf ?x ?y',
-                    'clear ?y'],
-                   ['at ?sokoban ?y',
-                    'clear ?x',
-                    'not (at ?sokoban ?x)',
-                    'not (clear ?y)']),
+                  ['at ?sokoban ?y', 'clear ?x', 'not (at ?sokoban ?x)', 'not (clear ?y)']),
+     'moveleft': (['sokoban ?sokoban', 'at ?sokoban ?x', 'leftOf ?y ?x', 'clear ?y'],
+                  ['at ?sokoban ?y', 'clear ?x', 'not (at ?sokoban ?x)', 'not (clear ?y)']),
+     'moveright': (['sokoban ?sokoban', 'at ?sokoban ?x', 'leftOf ?x ?y', 'clear ?y'],
+                   ['at ?sokoban ?y', 'clear ?x', 'not (at ?sokoban ?x)', 'not (clear ?y)']),
      'moveup': (['sokoban ?sokoban', 'at ?sokoban ?x', 'below ?x ?y', 'clear ?y'],
-                ['at ?sokoban ?y',
-                 'clear ?x',
-                 'not (at ?sokoban ?x)',
-                 'not (clear ?y)']),
-     'pushdown': (['sokoban ?sokoban',
-                   'crate ?crate',
-                   'below ?y ?x',
-                   'below ?z ?y',
-                   'at ?sokoban ?x',
-                   'at ?crate ?y',
-                   'clear ?z'],
-                  ['at ?sokoban ?y',
-                   'at ?crate ?z',
-                   'clear ?x',
-                   'not (at ?sokoban ?x)',
-                   'not (at ?crate ?y)',
-                   'not (clear ?y)',
-                   'not (clear ?z)']),
-     'pushleft': (['sokoban ?sokoban',
-                   'crate ?crate',
-                   'leftOf ?y ?x',
-                   'leftOf ?z ?y',
-                   'at ?sokoban ?x',
-                   'at ?crate ?y',
-                   'clear ?z'],
-                  ['at ?sokoban ?y',
-                   'at ?crate ?z',
-                   'clear ?x',
-                   'not (at ?sokoban ?x)',
-                   'not (at ?crate ?y)',
-                   'not (clear ?z)',
-                   'not (clear ?y)']),
-     'pushright': (['sokoban ?sokoban',
-                    'crate ?crate',
-                    'leftOf ?x ?y',
-                    'leftOf ?y ?z',
-                    'at ?sokoban ?x',
-                    'at ?crate ?y',
-                    'clear ?z'],
-                   ['at ?sokoban ?y',
-                    'at ?crate ?z',
-                    'clear ?x',
-                    'not (at ?sokoban ?x)',
-                    'not (at ?crate ?y)',
-                    'not (clear ?z)',
-                    'not (clear ?y)']),
-     'pushup': (['sokoban ?sokoban',
-                 'crate ?crate',
-                 'below ?x ?y',
-                 'below ?y ?z',
-                 'at ?sokoban ?x',
-                 'at ?crate ?y',
-                 'clear ?z'],
-                ['at ?sokoban ?y',
-                 'at ?crate ?z',
-                 'clear ?x',
-                 'not (at ?sokoban ?x)',
-                 'not (at ?crate ?y)',
-                 'not (clear ?y)',
-                 'not (clear ?z)'])}}
+                ['at ?sokoban ?y', 'clear ?x', 'not (at ?sokoban ?x)', 'not (clear ?y)']),
+     'pushdown': (['sokoban ?sokoban', 'crate ?crate', 'below ?y ?x', 'below ?z ?y', 'at ?sokoban ?x', 'at ?crate ?y', 'clear ?z'],
+                  ['at ?sokoban ?y', 'at ?crate ?z', 'clear ?x', 'not (at ?sokoban ?x)', 'not (at ?crate ?y)', 'not (clear ?y)', 'not (clear ?z)']),
+     'pushleft': (['sokoban ?sokoban', 'crate ?crate', 'leftOf ?y ?x', 'leftOf ?z ?y', 'at ?sokoban ?x', 'at ?crate ?y', 'clear ?z'],
+                  ['at ?sokoban ?y', 'at ?crate ?z', 'clear ?x', 'not (at ?sokoban ?x)', 'not (at ?crate ?y)', 'not (clear ?z)', 'not (clear ?y)']),
+     'pushright': (['sokoban ?sokoban', 'crate ?crate', 'leftOf ?x ?y', 'leftOf ?y ?z', 'at ?sokoban ?x', 'at ?crate ?y', 'clear ?z'],
+                   ['at ?sokoban ?y', 'at ?crate ?z', 'clear ?x', 'not (at ?sokoban ?x)', 'not (at ?crate ?y)', 'not (clear ?z)', 'not (clear ?y)']),
+     'pushup': (['sokoban ?sokoban', 'crate ?crate', 'below ?x ?y', 'below ?y ?z', 'at ?sokoban ?x', 'at ?crate ?y', 'clear ?z'],
+                ['at ?sokoban ?y', 'at ?crate ?z', 'clear ?x', 'not (at ?sokoban ?x)', 'not (at ?crate ?y)', 'not (clear ?y)', 'not (clear ?z)'])}}
     ```
-        """
+    """
 
     return to_return
 
