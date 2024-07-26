@@ -47,4 +47,4 @@ We compare base prompts (including initial state, goal state, plan, and question
 
 ## License
 
-(Add your chosen license information here)
+This repository is available under the MIT license. See the LICENSE file for more info.
