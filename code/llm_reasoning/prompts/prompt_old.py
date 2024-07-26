@@ -1,4 +1,12 @@
 def _prompt_basic(problem: str, solution: str, question: str) -> str:
+    """
+    Helper function to generate a basic prompt.
+    @param problem: The Sokoban problem in PDDL format.
+    @param solution: The generated solution plan.
+    @param question: The question to be answered.
+    @return: A formatted prompt string.
+    """
+
     return f"""
     I have a Sokoban problem with the following initial and goal states expressed in PDDL:
 
@@ -18,6 +26,11 @@ def _prompt_basic(problem: str, solution: str, question: str) -> str:
     ```
     {question}
     ```
+
+    Hints:
+        There are 8 actions for the Sokoban domain.
+        The actions with the format of `move* ?x ?y` are the action that move the Sokoban from location `?x` to `?y`.
+        The actions with the format of `push* ?x ?y ?z ?crate` are the action that push the Sokoban from `?x` to `?y` and `?crate` from location `?y` to `?z`.
     """
 
 

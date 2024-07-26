@@ -1,3 +1,50 @@
-# Contrastive Planning
+# Enhancing Plan Explanations with Planning Ontology and Large Language Models
 
-This project tackles the challenge of transparency in automated planning. When a proposed plan deviates from user expectations, explanations are crucial. We tackle this need by introducing a novel framework designed to generate contrastive explanations for plans specifically within the Sokoban domain. This framework leverages the strengths of Planning Ontology and integrates Natural Language Processing (NLP) with SPARQL queries to provide clear and insightful explanations. At the heart of this framework lies a dedicated knowledge graph (KG) which allows the system to possess a deeper understanding of the planning world. Its enriched ontology empowers the system to comprehend user queries about specific actions and their significance within a plan. An NLP module plays a critical role, acting as a bridge between natural language and the formal representation within KG. By categorizing user queries into planned actions, the NLP module facilitates the retrieval process. The query type, such as "why action A is not used" or "why action A is preferred over action B," dictates the system's retrieval process. It extracts relevant information from the KG, considering the enriched ontology, and formulates explanations dynamically. This empowers the system to explain why specific actions were included, excluded, or prioritized over others, fostering a deeper understanding of the automated planning process. This research contributes to the field of Explainable AI by fostering a deeper understanding of automated planning systems and their decision-making processes. The project not only advances user trust in automated planning systems by providing explanations for actions within plans, but it also has the potential to be extended beyond Sokoban. This framework serves as a foundation for generating explanations in other planning domains such as Rubik’s Cube, N-Puzzle, and FreeCell.
+This repository contains the code and resources for our project on enhancing the generation of plan explanations using Planning Ontology and Large Language Models.
+
+## Project Overview
+
+We tackle the challenge of transparency in automated planning by introducing a novel framework designed to generate contrastive explanations for plans. Our approach leverages Planning Ontology and integrates Natural Language Processing (NLP) with SPARQL queries to provide clear and insightful explanations.
+
+### Key Features
+
+- Integration of Planning Ontology with AI Planning systems
+- Generation of interactive plan explanations using Knowledge Graphs and Large Language Models (LLMs)
+- Focus on the Sokoban domain, with potential for extension to other planning domains
+
+## Repository Usage
+
+This repository contains the following directories: `code`, `data`, `models`.
+Please refer to the README files in each directory for detailed instructions on how to use the resources.
+
+## Experiments
+
+Our experiments explore different prompt structures to enhance LLM reasoning in the Sokoban domain. We focus on four key question types:
+
+1. Plan validation
+2. Action inclusion
+3. Action exclusion
+4. Action preference
+
+We compare base prompts (including initial state, goal state, plan, and question) with ontology-enhanced prompts that add domain-specific constraints from the planning ontology.
+
+## Results
+
+- Ontology-enhanced prompts improve reasoning for smaller LLMs
+- Significant performance boost observed for lower-parameter models
+
+## Future Work
+
+- Conduct user studies to evaluate the explanations
+- Support contrastive explanations
+- Explore different prompting strategies (e.g., Chain of Thought, ReAct)
+- Extend the framework to other planning domains (e.g., Rubik's Cube, N-Puzzle)
+
+## References
+
+1. Muppasani, B., Pallagani, V., Srivastava, B. and Mutharaju, R., 2023. Building and Using a Planning Ontology from Past Data for Performance Efficiency. In PLATO@ ICAPS.
+2. Muppasani, B., Pallagani, V., Srivastava, B., Mutharaju, R., Huhns, M.N. and Narayanan, V., 2023. A Planning Ontology to Represent and Exploit Planning Knowledge for Performance Efficiency. arXiv preprint arXiv:2307.13549.
+
+## License
+
+(Add your chosen license information here)
