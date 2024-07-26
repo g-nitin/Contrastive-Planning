@@ -151,7 +151,7 @@ def extract_grounded_objects(query: str, actions_dict: dict[str, int]) -> List[s
     return [match.group(0) for match in matches]
 
 
-def get_grounded_predicates(g: Graph, grounded_action: str) -> tuple[List[str], List[str]]:
+def get_grounded_predicates(grounded_action: str, g: Graph) -> tuple[List[str], List[str]]:
     """
     Given a string of action, return the grounded precondition and effect predicates.
     For example, given "moveLeft sokoban x1 y1", return a tuple of the grounded predicates:
@@ -161,8 +161,8 @@ def get_grounded_predicates(g: Graph, grounded_action: str) -> tuple[List[str], 
     ( ['sokoban ?sokoban', 'at ?sokoban ?x', 'leftOf ?y ?x', 'clear ?y'],
       ['at ?sokoban ?y', 'clear ?x', 'not (at ?sokoban ?x)', 'not (clear ?y)'] )
 
-    @param g: The RDF graph.
     @param grounded_action: The string object to extract predicates from.
+    @param g: The RDF graph. Default is the Sokoban domain, used from the data folder.
     @return: A tuple of the grounded precondition and effect predicates. Type: tuple(List[str], List[str])
     """
 

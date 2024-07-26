@@ -1,163 +1,132 @@
-from time import time
 from typing import Callable
 from dotenv import load_dotenv
 from os import getenv
-import google.generativeai as genai
-from huggingface_hub import InferenceClient
-from pandas import read_csv
-from plotly.express import histogram
-
 from abc import ABC, abstractmethod
 from os.path import exists
 from pathlib import Path
-from sokoban_prompt import *
+
+from prompt import Prompt, get_prompt_dict
+import google.generativeai as genai
+from huggingface_hub import InferenceClient
 
 
-def _get_responses_helper(write_str: str, prompts: dict[str, str], model_name: str,
-                          get_response: Callable[[str], str], time_output_path: str, has_ontology: bool) -> str:
+def _get_responses_helper(write_str: str, prompt: Prompt, get_response: Callable[[str], str]) -> str:
     """
     Helper function that loops through the prompts and gets the responses from the LLM.
     @param write_str: The string to write to the file.
-    @param prompts: The list of prompts to get responses from the LLM.
-    @param model_name: The name of the model.
+    @param prompt: The Prompt object to get the responses for.
     @param get_response: The function to get the response from the LLM.
-    @param time_output_path: The path to write the time taken to get the responses.
-    @param has_ontology: Whether the prompts have the ontology.
     @return: The modified string to write to the file.
     """
+    # Get the prompts
+    prompts: dict[str, str] = prompt.get_prompts()
+
     # Loop through the prompts
-    for prompt_name, prompt in prompts.items():
+    for name, prompt in prompts.items():
         prompt = f"\n{prompt}"
 
         # Print the name of the prompt
-        print(f"Querying {prompt_name}...")
-        write_str += f"### {prompt_name}\n\n"
-
+        print(f"Querying prompt {name}...")
         # Add prompt to the string in a dropdown
-        write_str += f"<details><summary>Prompt</summary>{prompt}\n</details>\n\n"
+        write_str += f"\n<details><summary>{name}</summary>{prompt}\n</details>\n\n"
 
         # Get the response
-        init_time: float = time()
         response: str = get_response(prompt).rstrip()
-
-        # Write the time taken to the time_output_path
-        # Is the prompts have ontology, then add ` + ontology` to the prompt name in the time entry
-        if has_ontology:
-            time_entry: str = f"{model_name},{prompt_name} + ontology,{time() - init_time}"
-        else:
-            time_entry: str = f"{model_name},{prompt_name},{time() - init_time}"
 
         # Add the response to the string
         response = response.replace("\n", "")
         response = response.replace("#", "")
-        write_str += (f"<details><summary>Response</summary>"
+        # To adhere with punctuations, replace the first letter with 'p' of `name`
+        name = 'p' + name[1:]
+        write_str += (f"<details><summary>Response for {name}</summary>"
                       f"\n\n\t{response}\n\n</details>\n\n")
-
-        # Write the time taken to the time_output_path
-        # First need to check whether the file exists
-        # If it does not, then write the header + the time entry
-        # Else, just write the time entry
-        if exists(time_output_path):
-            with open(time_output_path, "a") as f:
-                f.write(f"{time_entry}\n")
-        else:
-            with open(time_output_path, "w") as f:
-                f.write("Model,Question,Time\n")
-                f.write(f"{time_entry}\n")
 
     return write_str
 
 
-def _get_responses(model_name: str,
-                   prompts_without_onto: dict[str, str],
-                   prompts_with_onto: dict[str, str],
-                   get_response: Callable[[str], str],
-                   llm_output_path: str,
-                   time_output_path: str) -> None:
-    """
-    Get the responses from the LLM for the given prompts and write them to the file.
-    @param model_name: The name of the model.
-    @param prompts_without_onto: The prompts without the ontology.
-    @param prompts_with_onto: The prompts with the ontology.
-    @param get_response: The function to get the response from the LLM.
-    @param llm_output_path: The path to write the responses to.
-    @param time_output_path: The path to write the time taken to get the responses.
-    """
-    print(f"\nGetting responses for {model_name}...")
-
-    # Initialize the string to write to the file
-    write_str: str = f"# {model_name}\n\n"
-
-    # Get the responses for the prompts without ontology
-    print("\nQuerying prompts without the ontology.\n")
-    write_str += "## Prompts Without Ontology\n\n"
-    write_str = _get_responses_helper(write_str, prompts_without_onto, model_name, get_response, time_output_path, False)
-
-    # Get the responses for the prompts with ontology
-    print("\nQuerying prompts with the ontology.\n")
-    write_str += "## Prompts With Ontology\n\n"
-    write_str = _get_responses_helper(write_str, prompts_with_onto, model_name, get_response, time_output_path, True)
-
-    # Write the response from the LLM to the file
-    print(f"Writing to file {llm_output_path}...")
-    with open(llm_output_path, "w") as f:
-        f.write(write_str)
-
-
-def plot_time():
-    """
-    Plot the time taken by each LLM.
-    """
-    df = read_csv("outputs/time.csv")
-
-    fig = histogram(df, x="Question", y="Time", color='Model', barmode='group',
-                    labels={
-                        "Question": "Question Number",
-                        "Time": "Time (s)",
-                        "Model": "Model Name"
-                    },
-                    title="Time Taken by Each LLM", )
-
-    time_output_file: str = "plots/time_llm"
-    fig.write_html(f"{time_output_file}.html")
-    fig.write_image(f"{time_output_file}.png")
-
-    print(f"\nTime taken by each LLM is plotted in ./{time_output_file.split('/')[0]}")
-
-
-class llm(ABC):
-    def __init__(self, name: str, token: str, output_path: str):
+class LLM(ABC):
+    def __init__(self, name: str, token: str, output_path: str,
+                 plan_dict: dict[int, tuple[Prompt, Prompt]]):
+        """
+        Initialize the LLM.
+        @param name: The name of the LLM.
+        @param token: The token for the API.
+        @param output_path: The path to write the responses to.
+        @param plan_dict: The dictionary of plans to their respective Prompts with or without the ontology.
+            The keys are integers representing the plan number.
+            The values are a two-tuple consisting of the Prompt objects representing the questions for the plan
+            with and without the ontology (in that order).
+        """
         self.name: str = name
         self.token: str = token
         self.output_path: str = output_path
-        self.time_output_path: str = "outputs/time.csv"
+        self.plan_dict: dict[int, tuple[Prompt, Prompt]] = plan_dict
 
-        # Initialize the prompts
-        prompts_dict: dict[str, str] = dict.fromkeys(["Prompt 1", "Prompt 2", "Prompt 3",
-                                                      "Prompt 4a", "Prompt 4b", "Prompt 4c", "Prompt 5"])
+        # Example of a plan_dict:
+        # {
+        #     1: (
+        #           Prompt("this is the problem", "this is the solution", prompt_action, False),
+        #           Prompt("this is the problem", "this is the solution", prompt_action, True)
+        #        ),
+        # }
 
-        # Function to generate the prompts list
-        # @param boolean: Whether to include the ontology in the prompts
-        # @return: The list of prompts
-        generate_prompts_list: Callable[[bool], list[str]] = lambda boolean: \
-            [prompt(boolean) for prompt in [prompt_1, prompt_2, prompt_3, prompt_4a, prompt_4b, prompt_4c, prompt_5]]
-
-        # Generate the prompts with and without the ontology
-        self.prompts_without_onto: dict[str, str] = dict(zip(prompts_dict.keys(), generate_prompts_list(False)))
-        self.prompts_with_onto: dict[str, str] = dict(zip(prompts_dict.keys(), generate_prompts_list(True)))
+        # Example of prompt_action:
+        # {
+        #     "Prompt 2": "this is prompt 2",
+        #     "Prompt 3": "this is prompt 3",
+        #     "Prompt 4a": "this is prompt 4a",
+        #     "Prompt 4b": "this is prompt 4b",
+        #     "Prompt 4c-1": "this is prompt 4c-1",
+        #     "Prompt 4c-2": "this is prompt 4c-2",
+        #     "Prompt 5": "this is prompt 5"
+        # }
 
     @abstractmethod
     def get_response(self, prompt: str) -> str:
         pass
 
     def get_responses(self):
-        _get_responses(self.name, self.prompts_without_onto, self.prompts_with_onto,
-                       self.get_response, self.output_path, self.time_output_path)
+        """
+        Get the responses from the LLM for the given prompts and write them to the file.
+        """
+        print(f"\nGetting responses for {self.name}...")
+
+        # Initialize the string to write to the file
+        write_str: str = f"# {self.name}\n\n"
+        write_str += "---\n\n"  # Add a horizontal rule
+
+        # For each plan, get the responses for the prompts
+        for plan_num, prompts in self.plan_dict.items():
+            prompts_without_onto, prompts_with_onto = prompts
+
+            print(f"\nGetting responses for plan {plan_num}")
+            write_str += f"## Plan {plan_num}\n\n"
+
+            # Get the responses for the prompts without ontology
+            print("\nQuerying prompts without the ontology.")
+            write_str += "### Prompts Without Ontology\n\n"
+            write_str = _get_responses_helper(write_str, prompts_without_onto, self.get_response)
+
+            # Get the responses for the prompts with ontology
+            print("\nQuerying prompts with the ontology.")
+            write_str += "### Prompts With Ontology\n\n"
+            write_str = _get_responses_helper(write_str, prompts_with_onto, self.get_response)
+
+        # Write the response from the LLM to the file
+        print(f"Writing to file {self.output_path}...")
+        with open(self.output_path, "w") as f:
+            f.write(write_str)
 
 
-class gemini_flash(llm):
-    def __init__(self):
-        super().__init__("Gemini 1.5 Flash", getenv('GOOGLE_API_KEY'), "outputs/gemini_output.md")
+class gemini_flash(LLM):
+    def __init__(self, plan_dict):
+        """
+        Initialize the Gemini 1.5 Flash LLM.
+        @param plan_dict: The dictionary of plans to their respective Prompts
+            with or without the ontology (in that order).
+        """
+        super().__init__("Gemini 1.5 Flash", getenv('GOOGLE_API_KEY'),
+                         "outputs/gemini_output.md", plan_dict)
 
     def get_response(self, prompt: str) -> str:
         """
@@ -171,9 +140,15 @@ class gemini_flash(llm):
         return model.generate_content(prompt).text
 
 
-class llama_3_8b(llm):
-    def __init__(self):
-        super().__init__("Meta Llama 3 8B", getenv("HF_API_KEY"), "outputs/llama_3_8b_output.md")
+class llama_3_8b(LLM):
+    def __init__(self, plan_dict):
+        """
+        Initialize the Meta Llama 3 8B LLM.
+        @param plan_dict: The dictionary of plans to their respective Prompts
+            with or without the ontology (in that order).
+        """
+        super().__init__("Meta Llama 3 8B", getenv("HF_API_KEY"),
+                         "outputs/llama_3_8b_output.md", plan_dict)
 
     def get_response(self, prompt: str) -> str:
         """
@@ -198,9 +173,15 @@ class llama_3_8b(llm):
         return return_str
 
 
-class mixtral_8x7b(llm):
-    def __init__(self):
-        super().__init__("Mixtral-8x7B Instruct", getenv("HF_API_KEY"), "outputs/mixtral_8x7b_output.md")
+class mixtral_8x7b(LLM):
+    def __init__(self, plan_dict):
+        """
+        Initialize the Mixtral 8x7B LLM.
+        @param plan_dict: The dictionary of plans to their respective Prompts
+            with or without the ontology (in that order).
+        """
+        super().__init__("Mixtral-8x7B Instruct", getenv("HF_API_KEY"),
+                         "outputs/mixtral_8x7b_output.md", plan_dict)
 
     def get_response(self, prompt: str) -> str:
         """
@@ -237,11 +218,17 @@ def main():
         print("Initializing the time output file...")
         Path.unlink(Path(time_output_path))
 
-    gemini_flash().get_responses()
-    llama_3_8b().get_responses()
-    mixtral_8x7b().get_responses()
+    plan_dict: dict[int, tuple[Prompt, Prompt]] = get_prompt_dict()
 
-    plot_time()
+    # plan_dict = {1: plan_dict.get(1)}
+    # from pprint import pprint
+    # pprint(plan_dict.get(1))
+    # for a, plan in plan_dict.items():
+    #     pprint(plan[0].prompt_1())
+
+    # gemini_flash(plan_dict).get_responses()
+    # llama_3_8b(plan_dict).get_responses()
+    # mixtral_8x7b(plan_dict).get_responses()
 
 
 if __name__ == "__main__":
