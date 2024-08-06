@@ -8,6 +8,8 @@ from pathlib import Path
 from prompt import Prompt, get_prompt_dict
 import google.generativeai as genai
 from huggingface_hub import InferenceClient
+from openai import OpenAI
+from anthropic import Anthropic
 
 
 def _get_responses_helper(write_str: str, prompt: Prompt, get_response: Callable[[str], str]) -> str:
@@ -206,6 +208,67 @@ class mixtral_8x7b(LLM):
         return return_str
 
 
+class gpt_4o(LLM):
+    def __init__(self, plan_dict):
+        """
+        Initialize the OpenAI GPT-4o LLM.
+        @param plan_dict: The dictionary of plans to their respective Prompts
+            with or without the ontology (in that order).
+        """
+        super().__init__("GPT 4o", getenv("OPENAI_API_KEY"),
+                         "outputs/gpt_4o_output.md", plan_dict)
+
+    def get_response(self, prompt: str) -> str:
+        """
+
+        @param prompt: The prompt to send to the API.
+        @return: The response from the API.
+        """
+        client = OpenAI()
+
+        completion = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant"},
+                {"role": "user", "content": prompt}
+            ]
+        )
+
+        return completion.choices[0].message.content
+
+
+class claude_sonnet(LLM):
+    def __init__(self, plan_dict):
+        """
+        Initialize the Claude 3.5 Sonnet LLM.
+        @param plan_dict: The dictionary of plans to their respective Prompts
+            with or without the ontology (in that order).
+        """
+        super().__init__("Claude 3.5 Sonnet", getenv("ANTHROPIC_API_KEY"),
+                         "outputs/claude_sonnet.md", plan_dict)
+
+    def get_response(self, prompt: str) -> str:
+        """
+
+        @param prompt: The prompt to send to the API.
+        @return: The response from the API.
+        """
+        client = Anthropic()
+
+        message = client.messages.create(
+            max_tokens=2048,
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+            model="claude-3-5-sonnet-20240620",
+        )
+
+        return message.content[0].text
+
+
 def main():
     load_dotenv()
 
@@ -220,6 +283,7 @@ def main():
 
     plan_dict: dict[int, tuple[Prompt, Prompt]] = get_prompt_dict()
 
+    # Debugging
     # plan_dict = {1: plan_dict.get(1)}
     # from pprint import pprint
     # pprint(plan_dict.get(1))
@@ -229,6 +293,8 @@ def main():
     # gemini_flash(plan_dict).get_responses()
     # llama_3_8b(plan_dict).get_responses()
     # mixtral_8x7b(plan_dict).get_responses()
+    # gpt_4o(plan_dict).get_responses()
+    claude_sonnet(plan_dict).get_responses()
 
 
 if __name__ == "__main__":
