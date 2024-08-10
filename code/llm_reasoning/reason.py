@@ -4,6 +4,7 @@ from os import getenv
 from abc import ABC, abstractmethod
 from os.path import exists
 from pathlib import Path
+# from time import sleep
 
 from prompt import Prompt, get_prompt_dict
 import google.generativeai as genai
@@ -113,6 +114,9 @@ class LLM(ABC):
             print("\nQuerying prompts with the ontology.")
             write_str += "### Prompts With Ontology\n\n"
             write_str = _get_responses_helper(write_str, prompts_with_onto, self.get_response)
+
+            # print("\nWaiting for a minute before querying the next plan...")
+            # sleep(60)
 
         # Write the response from the LLM to the file
         print(f"Writing to file {self.output_path}...")
@@ -294,7 +298,7 @@ def main():
     # llama_3_8b(plan_dict).get_responses()
     # mixtral_8x7b(plan_dict).get_responses()
     # gpt_4o(plan_dict).get_responses()
-    claude_sonnet(plan_dict).get_responses()
+    # claude_sonnet(plan_dict).get_responses()
 
 
 if __name__ == "__main__":
