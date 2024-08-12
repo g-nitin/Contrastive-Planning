@@ -1,13 +1,12 @@
 .idea/
 .DS_Store
+
 code/templates/__pycache__/
 code/intent_parsing/__pycache__/
 code/__pycache__/
-code/intent_parsing/wandb/
-code/intent_parsing/saved_models/
+code/llm_reasoning/__pycache__/
+
 code/intent_parsing/results/
-code/intent_parsing/sclurm_outs/
+
 models/
 .env
-code/viz/
-code/llm_reasoning/__pycache__/

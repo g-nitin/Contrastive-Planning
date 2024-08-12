@@ -1,5 +1,5 @@
 from typing import List, Iterator
-from rdflib import Graph, query
+from rdflib import Graph, query, graph
 from re import finditer, IGNORECASE, Match
 
 
@@ -149,6 +149,40 @@ def extract_grounded_objects(query: str, actions_dict: dict[str, int]) -> List[s
 
     # Extract and return the complete matches
     return [match.group(0) for match in matches]
+
+
+def extract_actions(query: str) -> list[str]:
+    """
+    Given a user natural language (NL) query, extract the grounded object(s) from the user query. Some examples:
+    `query`: “Why is moveLeft sokoban x1 y1 not used in the plan?”
+        returned: [“moveLeft sokoban x1 y1”]
+    `query`: “Why is moveLeft sokoban x1 y1 used in the plan?”
+        returned: [“moveLeft sokoban x1 y1”]
+    `query`: “Why is moveLeft sokoban x1 y1 used rather than moveRight sokoban x1 y1?”
+        returned: [“moveLeft sokoban x1 y1”, “moveRight sokoban x1 y1”]
+    Note that this function works for the Sokoban domain.
+
+    :param query: The query to extract actions from.
+    :return: The list of action(s) extracted from the query.
+    """
+    # Create the mapping for the actions and their number of parameters
+    file_path: str = "../../data/sokoban/plan-ontology-rdf-instances_sokoban.owl"
+    g: graph.Graph = Graph().parse(file_path, format="xml")
+
+    # Get all actions
+    actions: List[str] = get_actions_from_rdf(g, 'sokoban')
+
+    # Create a dictionary for the actions and their number of parameters
+    # Keys: actions (string); Values: number of parameters (int)
+    actions_dict: dict[str, int] = {action: 0 for action in actions}
+
+    # Get parameters for the actions
+    for action in actions_dict.keys():
+        parameters: List[str] = get_parameters_from_rdf(g, action)
+        actions_dict[action] = len(parameters)  # Update the number of parameters
+
+    # Extract grounded objects for each query
+    return extract_grounded_objects(query, actions_dict)
 
 
 def get_grounded_predicates(grounded_action: str, g: Graph) -> tuple[List[str], List[str]]:
