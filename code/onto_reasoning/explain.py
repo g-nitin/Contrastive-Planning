@@ -101,6 +101,29 @@ def replace_placeholders(template, mapping):
     return template
 
 
+def get_mapping(g, action) -> tuple[dict[str, str], dict[str, str]]:
+    """
+    Get the mapping between lifted and grounded predicates for the given action.
+    @param g: The RDF graph containing the ontology
+    @param action: The action name and parameters
+    @return: A tuple containing the precondition and effect mappings
+    """
+    action_name = action.split()[0]
+
+    # Get the grounded preconditions and effects for the action from the plan
+    grounded_preconditions, grounded_effects = get_grounded_predicates(action, g)
+
+    # Get the lifted preconditions and effects for the action from the ontology
+    lifted_preconditions = get_preconditions_from_rdf(g, action_name.lower())
+    lifted_effects = get_effects_from_rdf(g, action_name.lower())
+
+    # Map lifted predicates to grounded predicates
+    precondition_mapping = dict(zip(lifted_preconditions, grounded_preconditions))
+    effect_mapping = dict(zip(lifted_effects, grounded_effects))
+
+    return precondition_mapping, effect_mapping
+
+
 def generate_explanation(g, action, in_plan):
     """
     Generate an explanation for why an action is used or not used in the plan.
@@ -119,12 +142,7 @@ def generate_explanation(g, action, in_plan):
     precondition_templates = get_predicate_templates(g, action_name, "Precondition")
     effect_templates = get_predicate_templates(g, action_name, "Effect")
 
-    grounded_preconditions, grounded_effects = get_grounded_predicates(action, g)
-    lifted_preconditions = get_preconditions_from_rdf(g, action_name.lower())
-    lifted_effects = get_effects_from_rdf(g, action_name.lower())
-
-    precondition_mapping = dict(zip(lifted_preconditions, grounded_preconditions))
-    effect_mapping = dict(zip(lifted_effects, grounded_effects))
+    precondition_mapping, effect_mapping = get_mapping(g, action)
 
     explanation = f"Action: {replace_placeholders(action_template, precondition_mapping)}\n"
     explanation += "Preconditions:\n" + "\n".join(
@@ -166,7 +184,41 @@ def compare_actions(g, action1, action2):
     return comparison
 
 
-def main(plan_file, question):
+def print_all_action_templates(g):
+    query = """
+    PREFIX planning: <https://purl.org/ai4s/ontology/planning#>
+    SELECT ?action ?template
+    WHERE {
+        ?action a planning:DomainAction ;
+                planning:hasNLTemplate ?template .
+    }
+    """
+    results = g.query(query)
+    for row in results:
+        print(f"Action: {row.action}, Template: {row.template}")
+
+
+def plan_valid_explanation(g, plan):
+    action_templates = []
+    for action in plan:
+        action = action.replace("(", "").replace(")", "")  # Remove parentheses
+
+        precondition_mapping, _ = get_mapping(g, action)  # Get the mapping for the action
+
+        action = action.split()[0]  # Get only the action name
+
+        action_template = get_action_template(g, action)
+        action_template = replace_placeholders(action_template, precondition_mapping)
+        action_templates.append(action_template)
+
+    # Add a number before each action template
+    print("The plan is valid because it follows the sequence of actions:")
+    action_templates = [f"{i + 1}. {template}." for i, template in enumerate(action_templates)]
+    # action_templates = [f"{template}." for i, template in enumerate(action_templates)]
+    print("\n".join(action_templates))
+
+
+def main(plan_file, question, domain: str):
     """
     Main function to process the plan file and question, and generate an explanation.
 
@@ -174,23 +226,38 @@ def main(plan_file, question):
     @type plan_file: str
     @param question: The question about the plan
     @type question: str
+    @param domain: The domain of the plan
+    @type domain: str
     """
-    ontology_file = "../../data/sokoban/plan-ontology-rdf-instances_sokoban.owl"
+    if domain == "sokoban":
+        ontology_file = "../../data/sokoban/plan-ontology-rdf-instances_sokoban.owl"
+    elif domain == "blocksworld":
+        ontology_file = "../../data/blocksworld/plan-ontology-rdf-instances_blocksworld.owl"
+    else:
+        raise ValueError(f"Invalid domain: {domain}")
     logger.info(f"Loading ontology from {ontology_file}")
 
+    # Load ontology and extract intent and actions
     g = load_ontology(ontology_file)
     logger.info(f"Ontology loaded successfully with {len(g)} triples.")
+
+    with open(plan_file, 'r') as f:
+        plan = [line.strip() for line in f.readlines()]
+
+    actions = extract_actions(question, domain)
+    logger.info(f"Extracted actions: {actions}")
+
+    # Assume that the question is "Is the plan valid?"
+    # To answer this question, we need to retrieve all templates from the ontology and join them in order of the plan
+    if question == "Is the plan valid?":
+        logger.info("Answering the question: Is the plan valid?")
+        plan_valid_explanation(g, plan)
+        return
 
     intent, intent_num = get_intent(question)
     logger.info(f"Detected intent: {intent}")
 
-    actions = extract_actions(question)
-    logger.info(f"Extracted actions: {actions}")
-
     # print_all_action_templates(g)
-
-    with open(plan_file, 'r') as f:
-        plan = [line.strip() for line in f.readlines()]
 
     if intent_num == 1:  # Why is action A not used in the plan?
         action = actions[0]
@@ -221,8 +288,10 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Process a plan file and answer a question.")
     parser.add_argument("plan_file", type=str, help="The path to the plan file")
+    parser.add_argument("domain", type=str,
+                        help="The domain for the plan. Currently supports 'sokoban' and 'blocksworld'")
     parser.add_argument("question", type=str, help="The question to answer")
 
     args = parser.parse_args()
 
-    main(args.plan_file, args.question)
+    main(args.plan_file, args.question, args.domain)
