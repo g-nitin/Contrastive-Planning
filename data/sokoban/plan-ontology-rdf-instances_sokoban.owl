@@ -126,7 +126,7 @@
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_5"/>
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_6"/>
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushdown_effect_7"/>
-    <planning-ontology:hasNLTemplate>The Sokoban pushes a crate down from ?y to ?z</planning-ontology:hasNLTemplate>
+    <planning-ontology:hasNLTemplate>From ?x, the Sokoban pushes ?crate down from ?y to ?z and moves to ?y</planning-ontology:hasNLTemplate>
   </rdf:Description>
   <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#stack_precondition_1">
     <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
@@ -154,7 +154,7 @@
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_5"/>
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_6"/>
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushleft_effect_7"/>
-    <planning-ontology:hasNLTemplate>The Sokoban pushes a crate left from ?y to ?z</planning-ontology:hasNLTemplate>
+    <planning-ontology:hasNLTemplate>From ?x, the Sokoban pushes ?crate left from ?y to ?z and moves to ?y</planning-ontology:hasNLTemplate>
   </rdf:Description>
   <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#moveright_effect_1">
     <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionEffect"/>
@@ -248,7 +248,7 @@
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_5"/>
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_6"/>
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushright_effect_7"/>
-    <planning-ontology:hasNLTemplate>The Sokoban pushes a crate right from ?y to ?z</planning-ontology:hasNLTemplate>
+    <planning-ontology:hasNLTemplate>From ?x, the Sokoban pushes ?crate right from ?y to ?z and moves to ?y</planning-ontology:hasNLTemplate>
   </rdf:Description>
   <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#pushup_precondition_7">
     <rdf:type rdf:resource="https://purl.org/ai4s/ontology/planning#ActionPrecondition"/>
@@ -490,7 +490,7 @@
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_5"/>
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_6"/>
     <planning-ontology:hasEffect rdf:resource="https://purl.org/ai4s/ontology/planning#pushup_effect_7"/>
-    <planning-ontology:hasNLTemplate>The Sokoban pushes a crate up from ?y to ?z</planning-ontology:hasNLTemplate>
+    <planning-ontology:hasNLTemplate>From ?x, the Sokoban pushes ?crate up from ?y to ?z and moves to ?y</planning-ontology:hasNLTemplate>
   </rdf:Description>
   <rdf:Description rdf:about="https://purl.org/ai4s/ontology/planning#hasPredicate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

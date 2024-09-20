@@ -26,11 +26,11 @@ def format_query_result_b(query_output: List[query.ResultRow]) -> List[str]:
     return [str(lit[0]).split("#")[-1] for lit in query_output]
 
 
-def get_actions_from_rdf(g: Graph, domain: str = "sokoban") -> List[str]:
+def get_actions_from_rdf(g: Graph, domain: str) -> List[str]:
     """
     Get the actions from an RDF graph.
     @param g: The RDF graph.
-    @param domain: The domain of the actions. Default is "sokoban".
+    @param domain: The domain of the actions.
     @return: The actions from the RDF graph. Type: List[query.ResultRow]
     """
 
@@ -151,7 +151,7 @@ def extract_grounded_objects(query: str, actions_dict: dict[str, int]) -> List[s
     return [match.group(0) for match in matches]
 
 
-def extract_actions(query: str) -> list[str]:
+def extract_actions(query: str, domain: str) -> list[str]:
     """
     Given a user natural language (NL) query, extract the grounded object(s) from the user query. Some examples:
     `query`: “Why is moveLeft sokoban x1 y1 not used in the plan?”
@@ -163,14 +163,21 @@ def extract_actions(query: str) -> list[str]:
     Note that this function works for the Sokoban domain.
 
     :param query: The query to extract actions from.
+    :param domain: The domain of the actions.
     :return: The list of action(s) extracted from the query.
     """
     # Create the mapping for the actions and their number of parameters
-    file_path: str = "../../data/sokoban/plan-ontology-rdf-instances_sokoban.owl"
+    if domain == "sokoban":
+        file_path: str = "../../data/sokoban/plan-ontology-rdf-instances_sokoban.owl"
+    elif domain == "blocksworld":
+        file_path: str = "../../data/blocksworld/plan-ontology-rdf-instances_blocksworld.owl"
+    else:
+        raise ValueError(f"Invalid domain: {domain}.\nShould be either 'sokoban' or 'blocksworld'.")
+
     g: graph.Graph = Graph().parse(file_path, format="xml")
 
     # Get all actions
-    actions: List[str] = get_actions_from_rdf(g, 'sokoban')
+    actions: List[str] = get_actions_from_rdf(g, domain)
 
     # Create a dictionary for the actions and their number of parameters
     # Keys: actions (string); Values: number of parameters (int)
