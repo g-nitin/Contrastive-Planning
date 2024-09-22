@@ -211,11 +211,26 @@ def plan_valid_explanation(g, plan):
         action_template = replace_placeholders(action_template, precondition_mapping)
         action_templates.append(action_template)
 
-    # Add a number before each action template
-    print("The plan is valid because it follows the sequence of actions:")
-    action_templates = [f"{i + 1}. {template}." for i, template in enumerate(action_templates)]
-    # action_templates = [f"{template}." for i, template in enumerate(action_templates)]
-    print("\n".join(action_templates))
+    # Add a number and the action before each action template
+    # However, format each the strings in such a way that the number and actions have the same length
+    # The width of the number should be the same as the width of the longest number
+    # The width of the action should be the same as the width of the longest action
+    # The width of the action template shouldn't matter as it is on the rightmost side
+    # Example format:
+    #   "1. moveup l19 l12   : The Sokoban moves up from 'l19' to 'l12'."
+    #   "2. moveleft l12 l11 : The Sokoban moves left from 'l12' to 'l11'."
+    #   ...
+    #   "10. pushup l11 l10  : The Sokoban pushes the box from 'l11' to 'l10'."
+
+    # Get the width of the longest number and action
+    max_num_width = len(str(len(action_templates)))
+    max_action_width = max(len(action) for action in plan)
+
+    explanation = ""
+    for i, (action, template) in enumerate(zip(plan, action_templates), start=1):
+        explanation += f"{i:>{max_num_width}}. {action:<{max_action_width}} : {template}\n"
+
+    print(explanation)
 
 
 def main(plan_file, question, domain: str):
